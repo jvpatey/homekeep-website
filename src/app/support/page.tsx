@@ -43,7 +43,9 @@ export default function Support() {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                   HomeKeep Support
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300">We're here to help!</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  We're here to help!
+                </p>
               </div>
             </div>
           </div>
@@ -205,13 +207,13 @@ export default function Support() {
 
             <div>
               <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                Can I customize notification times?
+                How do notifications work?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Yes! Go to Settings → Notification Preferences to customize when
-                you receive reminders for each category. You can set different
-                notification times for HVAC, Plumbing, Electrical, and other
-                categories.
+                HomeKeep sends you reminders based on your task schedules and
+                due dates. You can enable or disable notifications for different
+                categories in Settings → Notification Preferences to control
+                which types of tasks send you alerts.
               </p>
             </div>
 
@@ -220,8 +222,9 @@ export default function Support() {
                 How do I delete a task?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Swipe left on any task in your task list, or go to Settings →
-                All Tasks to manage and delete individual tasks.
+                To delete individual tasks: Go to Profile Menu → Total Tasks,
+                then tap the garbage icon next to any task. To delete all tasks:
+                Go to Profile Menu → Settings → Delete All Tasks.
               </p>
             </div>
 
@@ -241,9 +244,10 @@ export default function Support() {
                 Is my data backed up?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Your tasks and settings are stored locally on your device. We
-                recommend using iCloud backup to ensure your data is preserved
-                when you upgrade or restore your device.
+                Yes! Your tasks and settings are securely stored in the cloud
+                using Supabase, so your data is automatically backed up and
+                synced across your devices. You won't lose your data when you
+                upgrade or restore your device.
               </p>
             </div>
 
@@ -252,9 +256,9 @@ export default function Support() {
                 How do I report a bug or request a feature?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Please use the contact form above or email us with details about
-                the issue or your feature request. We read every message and use
-                your feedback to improve HomeKeep.
+                Please use the contact form above with details about the issue
+                or your feature request. We read every message and use your
+                feedback to improve HomeKeep.
               </p>
             </div>
           </div>

@@ -118,9 +118,10 @@ export default function Home() {
                 Schedule
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Never forget when to clean your gutters, change filters, or
-                service your HVAC again. Get automatic reminders for all your
-                home maintenance needs.
+                Set up recurring maintenance schedules with flexible intervals
+                from daily to yearly. HomeKeep automatically reminds you when
+                tasks are due, so you'll never miss important home maintenance
+                again.
               </p>
             </div>
 
@@ -347,7 +348,7 @@ export default function Home() {
 
             <div className="mt-8 pt-8 border-t border-gray-800">
               <p className="text-gray-500 text-sm">
-                © 2024 HomeKeep. All rights reserved.
+                © 2025 HomeKeep. All rights reserved.
               </p>
             </div>
           </div>
