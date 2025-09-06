@@ -6,17 +6,35 @@ export default function Terms() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="flex items-center space-x-4">
-            <Image
-              src="/homekeep-logo.png"
-              alt="HomeKeep Logo"
-              width={60}
-              height={60}
-              className="rounded-2xl"
-            />
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Terms of Service</h1>
-              <p className="text-gray-600">Last updated: January 2025</p>
+          <div className="relative flex items-center justify-center">
+            {/* Back Button - Left */}
+            <div className="absolute left-0">
+              <a 
+                href="/" 
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 shadow-sm"
+              >
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Home
+              </a>
+            </div>
+            
+            {/* Centered Content */}
+            <div className="flex items-center space-x-4">
+              <Image
+                src="/homekeep-logo.png"
+                alt="HomeKeep Logo"
+                width={60}
+                height={60}
+                className="rounded-2xl"
+              />
+              <div className="text-center">
+                <h1 className="text-3xl font-bold text-gray-900">
+                  Terms of Service
+                </h1>
+                <p className="text-gray-600">Last updated: January 2025</p>
+              </div>
             </div>
           </div>
         </div>
@@ -25,100 +43,145 @@ export default function Terms() {
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-white rounded-lg shadow-sm p-8 prose max-w-none">
-          
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Agreement to Terms</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Agreement to Terms
+            </h2>
             <p className="text-gray-600 mb-4">
-              By downloading, installing, or using the HomeKeep mobile application ("the App"), you agree to be 
-              bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.
+              By downloading, installing, or using the HomeKeep mobile
+              application ("the App"), you agree to be bound by these Terms of
+              Service ("Terms"). If you do not agree to these Terms, please do
+              not use the App.
             </p>
             <p className="text-gray-600">
-              These Terms constitute a legal agreement between you and HomeKeep regarding your use of the App.
+              These Terms constitute a legal agreement between you and HomeKeep
+              regarding your use of the App.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Description of Service</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Description of Service
+            </h2>
             <p className="text-gray-600 mb-4">
-              HomeKeep is a mobile application designed to help you organize, schedule, and track home maintenance tasks. 
-              The App provides features including:
+              HomeKeep is a mobile application designed to help you organize,
+              schedule, and track home maintenance tasks. The App provides
+              features including:
             </p>
             <ul className="text-gray-600 space-y-2">
               <li>• Task creation and management</li>
               <li>• Recurring task scheduling</li>
               <li>• Notification reminders</li>
               <li>• Progress tracking and completion history</li>
-              <li>• Nine maintenance categories (HVAC, Plumbing, Electrical, etc.)</li>
+              <li>
+                • Nine maintenance categories (HVAC, Plumbing, Electrical, etc.)
+              </li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">License and Use</h2>
-            
-            <h3 className="text-lg font-medium text-gray-900 mb-3">License Grant</h3>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              License and Use
+            </h2>
+
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              License Grant
+            </h3>
             <p className="text-gray-600 mb-4">
-              Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license 
-              to use HomeKeep for personal, non-commercial purposes on your iOS device.
+              Subject to these Terms, we grant you a limited, non-exclusive,
+              non-transferable, revocable license to use HomeKeep for personal,
+              non-commercial purposes on your iOS device.
             </p>
 
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Restrictions</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              Restrictions
+            </h3>
             <p className="text-gray-600 mb-4">You agree not to:</p>
             <ul className="text-gray-600 space-y-2">
-              <li>• Modify, reverse engineer, or attempt to extract source code from the App</li>
+              <li>
+                • Modify, reverse engineer, or attempt to extract source code
+                from the App
+              </li>
               <li>• Use the App for any illegal or unauthorized purpose</li>
               <li>• Distribute, sell, or sublicense the App</li>
               <li>• Remove or alter any proprietary notices in the App</li>
-              <li>• Use the App in a way that could damage or impair our services</li>
+              <li>
+                • Use the App in a way that could damage or impair our services
+              </li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">User Data and Privacy</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              User Data and Privacy
+            </h2>
             <p className="text-gray-600 mb-4">
-              Your use of HomeKeep is also governed by our Privacy Policy. By using the App, you acknowledge 
-              that you have read and understood our Privacy Policy.
+              Your use of HomeKeep is also governed by our Privacy Policy. By
+              using the App, you acknowledge that you have read and understood
+              our Privacy Policy.
             </p>
             <p className="text-gray-600">
-              <strong>Key Points:</strong> Your task data is stored securely in our cloud database (Supabase) 
-              to enable syncing across devices. We only collect information necessary for app functionality 
-              and do not share your data with third parties.
+              <strong>Key Points:</strong> Your task data is stored securely in
+              our cloud database (Supabase) to enable syncing across devices. We
+              only collect information necessary for app functionality and do
+              not share your data with third parties.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Disclaimers and Limitations</h2>
-            
-            <h3 className="text-lg font-medium text-gray-900 mb-3">App Availability</h3>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Disclaimers and Limitations
+            </h2>
+
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              App Availability
+            </h3>
             <p className="text-gray-600 mb-4">
-              HomeKeep is provided "as is" without warranties of any kind. We do not guarantee that the App 
-              will be available at all times or free from errors, bugs, or interruptions.
+              HomeKeep is provided "as is" without warranties of any kind. We do
+              not guarantee that the App will be available at all times or free
+              from errors, bugs, or interruptions.
             </p>
 
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Maintenance Responsibility</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              Maintenance Responsibility
+            </h3>
             <p className="text-gray-600 mb-4">
-              <strong>Important:</strong> HomeKeep is a tool to help you organize and remember maintenance tasks. 
-              You are solely responsible for:
+              <strong>Important:</strong> HomeKeep is a tool to help you
+              organize and remember maintenance tasks. You are solely
+              responsible for:
             </p>
             <ul className="text-gray-600 space-y-2">
               <li>• Performing actual maintenance on your property</li>
-              <li>• Ensuring the safety and proper functioning of your home systems</li>
+              <li>
+                • Ensuring the safety and proper functioning of your home
+                systems
+              </li>
               <li>• Following manufacturer guidelines and local codes</li>
               <li>• Seeking professional help when needed</li>
-              <li>• Verifying the accuracy and completeness of your maintenance schedules</li>
+              <li>
+                • Verifying the accuracy and completeness of your maintenance
+                schedules
+              </li>
             </ul>
 
-            <h3 className="text-lg font-medium text-gray-900 mb-3">No Professional Advice</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              No Professional Advice
+            </h3>
             <p className="text-gray-600">
-              HomeKeep does not provide professional maintenance, repair, or safety advice. Always consult 
-              qualified professionals for complex maintenance tasks, safety concerns, or when in doubt.
+              HomeKeep does not provide professional maintenance, repair, or
+              safety advice. Always consult qualified professionals for complex
+              maintenance tasks, safety concerns, or when in doubt.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limitation of Liability</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Limitation of Liability
+            </h2>
             <p className="text-gray-600 mb-4">
-              To the maximum extent permitted by law, HomeKeep and its developers shall not be liable for any 
-              direct, indirect, incidental, special, or consequential damages resulting from:
+              To the maximum extent permitted by law, HomeKeep and its
+              developers shall not be liable for any direct, indirect,
+              incidental, special, or consequential damages resulting from:
             </p>
             <ul className="text-gray-600 space-y-2">
               <li>• Use or inability to use the App</li>
@@ -130,63 +193,85 @@ export default function Terms() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Updates and Changes</h2>
-            
-            <h3 className="text-lg font-medium text-gray-900 mb-3">App Updates</h3>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Updates and Changes
+            </h2>
+
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              App Updates
+            </h3>
             <p className="text-gray-600 mb-4">
-              We may release updates to improve the App's functionality, security, or performance. 
-              You are responsible for downloading and installing updates to ensure optimal performance.
+              We may release updates to improve the App's functionality,
+              security, or performance. You are responsible for downloading and
+              installing updates to ensure optimal performance.
             </p>
 
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Terms Updates</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">
+              Terms Updates
+            </h3>
             <p className="text-gray-600">
-              We reserve the right to modify these Terms at any time. Updated Terms will be posted on this page 
-              with a new "Last updated" date. Continued use of the App after changes constitutes acceptance of the updated Terms.
+              We reserve the right to modify these Terms at any time. Updated
+              Terms will be posted on this page with a new "Last updated" date.
+              Continued use of the App after changes constitutes acceptance of
+              the updated Terms.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Termination</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Termination
+            </h2>
             <p className="text-gray-600 mb-4">
-              You may stop using HomeKeep at any time by deleting the App from your device. 
-              We may terminate or suspend your access to the App if you violate these Terms.
+              You may stop using HomeKeep at any time by deleting the App from
+              your device. We may terminate or suspend your access to the App if
+              you violate these Terms.
             </p>
             <p className="text-gray-600">
-              Upon termination, your license to use the App ends immediately. You may request deletion 
-              of your account and all associated data by contacting support, or your data will be retained 
-              according to our data retention policies outlined in our Privacy Policy.
+              Upon termination, your license to use the App ends immediately.
+              You may request deletion of your account and all associated data
+              by contacting support, or your data will be retained according to
+              our data retention policies outlined in our Privacy Policy.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Governing Law</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Governing Law
+            </h2>
             <p className="text-gray-600">
-              These Terms are governed by and construed in accordance with the laws of your jurisdiction, 
-              without regard to conflict of law principles. Any disputes shall be resolved through 
-              binding arbitration or in the courts of competent jurisdiction.
+              These Terms are governed by and construed in accordance with the
+              laws of your jurisdiction, without regard to conflict of law
+              principles. Any disputes shall be resolved through binding
+              arbitration or in the courts of competent jurisdiction.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Contact Information
+            </h2>
             <p className="text-gray-600 mb-4">
-              If you have any questions about these Terms of Service, please contact us at:
+              If you have any questions about these Terms of Service, please
+              contact us at:
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Email:</strong> support@homekeepapp.com<br />
+                <strong>Email:</strong> support@homekeepapp.com
+                <br />
                 <strong>Subject:</strong> Terms of Service Question
               </p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Acceptance</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Acceptance
+            </h2>
             <p className="text-gray-600">
-              By using HomeKeep, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+              By using HomeKeep, you acknowledge that you have read, understood,
+              and agree to be bound by these Terms of Service.
             </p>
           </section>
-
         </div>
       </main>
 
@@ -202,11 +287,19 @@ export default function Terms() {
               className="rounded-xl"
             />
           </div>
-          <p className="text-gray-400 mb-4">HomeKeep - Never forget home maintenance again!</p>
+          <p className="text-gray-400 mb-4">
+            HomeKeep - Never forget home maintenance again!
+          </p>
           <div className="flex justify-center space-x-6 text-sm text-gray-400">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <a href="/support" className="hover:text-white transition-colors">Support</a>
-            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/" className="hover:text-white transition-colors">
+              Home
+            </a>
+            <a href="/support" className="hover:text-white transition-colors">
+              Support
+            </a>
+            <a href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </footer>
