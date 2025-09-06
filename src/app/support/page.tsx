@@ -11,7 +11,7 @@ export default function Support() {
             <div className="absolute left-0">
               <a
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -81,7 +81,7 @@ export default function Support() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -98,7 +98,7 @@ export default function Support() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -114,7 +114,7 @@ export default function Support() {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                   >
                     <option value="">Select a topic...</option>
                     <option value="Bug Report">Bug Report</option>
@@ -137,14 +137,14 @@ export default function Support() {
                     name="message"
                     required
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="Describe your issue or question..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  className="w-full bg-teal-600 text-white py-2 px-4 rounded-lg hover:bg-teal-700 transition-colors font-medium"
                 >
                   Send Message
                 </button>
@@ -152,7 +152,7 @@ export default function Support() {
 
               <div className="mt-4 flex items-center space-x-3 text-sm text-gray-600">
                 <svg
-                  className="w-4 h-4 text-blue-600"
+                  className="w-4 h-4 text-teal-600"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -181,7 +181,6 @@ export default function Support() {
                   <strong>Compatibility:</strong> iOS 14.0 or later
                 </p>
               </div>
-
             </div>
           </div>
         </section>

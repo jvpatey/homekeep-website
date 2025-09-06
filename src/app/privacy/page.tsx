@@ -11,7 +11,7 @@ export default function Privacy() {
             <div className="absolute left-0">
               <a
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -216,7 +216,8 @@ export default function Privacy() {
               HomeKeep is not directed to children under 13 years of age. We do
               not knowingly collect personal information from children under 13.
               If you are a parent or guardian and believe your child has
-              provided information to us, please contact us through our support page.
+              provided information to us, please contact us through our support
+              page.
             </p>
           </section>
 
@@ -277,9 +278,9 @@ export default function Privacy() {
               privacy practices, please visit our support page to get in touch.
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <a 
-                href="/support" 
-                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              <a
+                href="/support"
+                className="inline-flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-medium"
               >
                 Contact Support
               </a>

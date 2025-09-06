@@ -26,7 +26,7 @@ export default function Home() {
 
           {/* App Store Button Placeholder */}
           <div className="flex justify-center mb-16">
-            <div className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors cursor-pointer">
+            <div className="bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-teal-700 transition-colors cursor-pointer">
               Download on the App Store
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function Home() {
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-blue-600"
+                  className="w-8 h-8 text-teal-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -159,7 +159,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -181,7 +181,7 @@ export default function Home() {
 
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -203,7 +203,7 @@ export default function Home() {
 
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -225,7 +225,7 @@ export default function Home() {
 
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -247,7 +247,7 @@ export default function Home() {
 
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -267,7 +267,7 @@ export default function Home() {
 
             <div className="flex items-start space-x-3">
               <svg
-                className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -287,18 +287,18 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-teal-600">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to keep your home in perfect condition?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
             Download HomeKeep today and experience the peace of mind that comes
             with a perfectly maintained home.
           </p>
 
           {/* App Store Button */}
-          <div className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors cursor-pointer inline-block">
+          <div className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors cursor-pointer inline-block border-2 border-white">
             Download on the App Store
           </div>
         </div>
@@ -309,7 +309,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <Image
+          <Image
                 src="/homekeep-logo.png"
                 alt="HomeKeep Logo"
                 width={60}
