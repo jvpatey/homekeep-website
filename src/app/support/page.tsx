@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export default function Support() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white dark:bg-gray-800 dark:bg-gray-800 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="relative flex items-center justify-center">
             {/* Back Button - Left */}
             <div className="absolute left-0">
               <a
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -40,10 +40,10 @@ export default function Support() {
                 className="rounded-2xl"
               />
               <div className="text-center">
-                <h1 className="text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                   HomeKeep Support
                 </h1>
-                <p className="text-gray-600">We're here to help!</p>
+                <p className="text-gray-600 dark:text-gray-300">We're here to help!</p>
               </div>
             </div>
           </div>
@@ -53,14 +53,14 @@ export default function Support() {
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         {/* Contact Information */}
-        <section className="bg-white rounded-lg shadow-sm p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Get Support
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                 Send us a Message
               </h3>
               <form
@@ -72,7 +72,7 @@ export default function Support() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Name
                   </label>
@@ -81,7 +81,7 @@ export default function Support() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -89,7 +89,7 @@ export default function Support() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Email
                   </label>
@@ -98,7 +98,7 @@ export default function Support() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -106,7 +106,7 @@ export default function Support() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Subject
                   </label>
@@ -114,7 +114,7 @@ export default function Support() {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                   >
                     <option value="">Select a topic...</option>
                     <option value="Bug Report">Bug Report</option>
@@ -128,7 +128,7 @@ export default function Support() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                   >
                     Message
                   </label>
@@ -137,7 +137,7 @@ export default function Support() {
                     name="message"
                     required
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
                     placeholder="Describe your issue or question..."
                   ></textarea>
                 </div>
@@ -150,7 +150,7 @@ export default function Support() {
                 </button>
               </form>
 
-              <div className="mt-4 flex items-center space-x-3 text-sm text-gray-600">
+              <div className="mt-4 flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-300">
                 <svg
                   className="w-4 h-4 text-teal-600"
                   fill="currentColor"
@@ -167,17 +167,17 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-4">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                 App Information
               </h3>
               <div className="space-y-2">
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   <strong>Current Version:</strong> 1.0.0
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   <strong>Platform:</strong> iOS
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   <strong>Compatibility:</strong> iOS 14.0 or later
                 </p>
               </div>
@@ -186,17 +186,17 @@ export default function Support() {
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-white rounded-lg shadow-sm p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Frequently Asked Questions
           </h2>
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 How do I create a recurring task?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Tap the "+" button, fill in your task details, then select your
                 desired interval from daily to yearly. HomeKeep will
                 automatically create reminders based on your schedule.
@@ -204,10 +204,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 Can I customize notification times?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Yes! Go to Settings → Notification Preferences to customize when
                 you receive reminders for each category. You can set different
                 notification times for HVAC, Plumbing, Electrical, and other
@@ -216,20 +216,20 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 How do I delete a task?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Swipe left on any task in your task list, or go to Settings →
                 All Tasks to manage and delete individual tasks.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 What categories are available?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 HomeKeep includes 9 comprehensive categories: HVAC, Plumbing,
                 Electrical, Appliances, Exterior, Interior, Landscaping, Safety,
                 and General maintenance tasks.
@@ -237,10 +237,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 Is my data backed up?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Your tasks and settings are stored locally on your device. We
                 recommend using iCloud backup to ensure your data is preserved
                 when you upgrade or restore your device.
@@ -248,10 +248,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 How do I report a bug or request a feature?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Please use the contact form above or email us with details about
                 the issue or your feature request. We read every message and use
                 your feedback to improve HomeKeep.
@@ -261,17 +261,17 @@ export default function Support() {
         </section>
 
         {/* Troubleshooting */}
-        <section className="bg-white rounded-lg shadow-sm p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Troubleshooting
           </h2>
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 Notifications Not Working
               </h3>
-              <ul className="text-gray-600 space-y-1 ml-4">
+              <ul className="text-gray-600 dark:text-gray-300 space-y-1 ml-4">
                 <li>
                   • Check that notifications are enabled in Settings →
                   Notifications
@@ -285,10 +285,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 App Crashes or Performance Issues
               </h3>
-              <ul className="text-gray-600 space-y-1 ml-4">
+              <ul className="text-gray-600 dark:text-gray-300 space-y-1 ml-4">
                 <li>• Force close and restart the app</li>
                 <li>• Restart your device</li>
                 <li>• Check for app updates in the App Store</li>
@@ -300,10 +300,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                 Tasks Not Appearing
               </h3>
-              <ul className="text-gray-600 space-y-1 ml-4">
+              <ul className="text-gray-600 dark:text-gray-300 space-y-1 ml-4">
                 <li>• Pull down on the task list to refresh</li>
                 <li>
                   • Check that the task's due date is within your current view
@@ -321,7 +321,7 @@ export default function Support() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-8">
+      <footer className="bg-gray-900 dark:bg-black py-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex justify-center mb-4">
             <Image

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
       <section className="px-6 py-20 max-w-7xl mx-auto">
         <div className="text-center">
@@ -15,10 +15,10 @@ export default function Home() {
               className="rounded-3xl shadow-lg"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white dark:text-white mb-6">
             HomeKeep
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
             Never forget home maintenance again! Track, schedule, and complete
             all your home maintenance tasks with reminders and organized task
             tracking.
@@ -53,13 +53,13 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Everything you need to maintain your home
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Simple tools to create lasting home care habits
             </p>
           </div>
@@ -82,10 +82,10 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 Organize
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Create, organize, and manage all your home maintenance tasks in
                 one place. Set priorities, due dates, and categories to keep
                 everything organized.
@@ -109,10 +109,10 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 Schedule
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Never forget when to clean your gutters, change filters, or
                 service your HVAC again. Get automatic reminders for all your
                 home maintenance needs.
@@ -136,10 +136,10 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                 Track
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Celebrate your achievements and track your home maintenance
                 progress. Build a complete history of completed tasks and
                 maintenance milestones.
@@ -150,9 +150,9 @@ export default function Home() {
       </section>
 
       {/* Key Features List */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
             Powerful features for every homeowner
           </h2>
 
@@ -170,10 +170,10 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-gray-900 dark:text-white">
                   Recurring Task Schedules
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Customizable intervals from daily to yearly
                 </p>
               </div>
@@ -192,10 +192,10 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-gray-900 dark:text-white">
                   9 Comprehensive Categories
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   HVAC, Plumbing, Electrical, and more
                 </p>
               </div>
@@ -214,10 +214,10 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-gray-900 dark:text-white">
                   Priority-Based Organization
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Low, medium, and high priority tasks
                 </p>
               </div>
@@ -236,10 +236,10 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-gray-900 dark:text-white">
                   Smart Notifications
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Customizable preferences per category
                 </p>
               </div>
@@ -258,10 +258,10 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">
+                <h4 className="font-semibold text-gray-900 dark:text-white">
                   Progress Tracking
                 </h4>
-                <p className="text-gray-600">Complete maintenance history</p>
+                <p className="text-gray-600 dark:text-gray-300">Complete maintenance history</p>
               </div>
             </div>
 
@@ -278,8 +278,8 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900">Clean Interface</h4>
-                <p className="text-gray-600">Modern design for daily use</p>
+                <h4 className="font-semibold text-gray-900 dark:text-white">Clean Interface</h4>
+                <p className="text-gray-600 dark:text-gray-300">Modern design for daily use</p>
               </div>
             </div>
           </div>
@@ -305,11 +305,11 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900">
+      <footer className="py-12 bg-gray-900 dark:bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-          <Image
+              <Image
                 src="/homekeep-logo.png"
                 alt="HomeKeep Logo"
                 width={60}
