@@ -9,17 +9,27 @@ export default function Terms() {
           <div className="relative flex items-center justify-center">
             {/* Back Button - Left */}
             <div className="absolute left-0">
-              <a 
-                href="/" 
+              <a
+                href="/"
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-blue-600 transition-all duration-200 shadow-sm"
               >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
                 </svg>
                 Home
               </a>
             </div>
-            
+
             {/* Centered Content */}
             <div className="flex items-center space-x-4">
               <Image
@@ -33,7 +43,7 @@ export default function Terms() {
                 <h1 className="text-3xl font-bold text-gray-900">
                   Terms of Service
                 </h1>
-                <p className="text-gray-600">Last updated: January 2025</p>
+                <p className="text-gray-600">Last updated: September 2025</p>
               </div>
             </div>
           </div>
