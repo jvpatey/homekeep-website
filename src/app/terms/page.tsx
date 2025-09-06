@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-700 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 dark:bg-gray-800 shadow-sm">
+      <header className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="relative flex items-center justify-center">
             {/* Back Button - Left */}
             <div className="absolute left-0">
-              <a
+              <Link
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 dark:bg-gray-700 hover:text-teal-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -27,7 +28,7 @@ export default function Terms() {
                   />
                 </svg>
                 Home
-              </a>
+              </Link>
             </div>
 
             {/* Centered Content */}
@@ -43,7 +44,9 @@ export default function Terms() {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                   Terms of Service
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300">Last updated: September 2025</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Last updated: September 2025
+                </p>
               </div>
             </div>
           </div>
@@ -59,9 +62,9 @@ export default function Terms() {
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               By downloading, installing, or using the HomeKeep mobile
-              application ("the App"), you agree to be bound by these Terms of
-              Service ("Terms"). If you do not agree to these Terms, please do
-              not use the App.
+              application (&quot;the App&quot;), you agree to be bound by these
+              Terms of Service (&quot;Terms&quot;). If you do not agree to these
+              Terms, please do not use the App.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               These Terms constitute a legal agreement between you and HomeKeep
@@ -106,7 +109,9 @@ export default function Terms() {
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
               Restrictions
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">You agree not to:</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              You agree not to:
+            </p>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
               <li>
                 • Modify, reverse engineer, or attempt to extract source code
@@ -147,9 +152,9 @@ export default function Terms() {
               App Availability
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              HomeKeep is provided "as is" without warranties of any kind. We do
-              not guarantee that the App will be available at all times or free
-              from errors, bugs, or interruptions.
+              HomeKeep is provided &quot;as is&quot; without warranties of any
+              kind. We do not guarantee that the App will be available at all
+              times or free from errors, bugs, or interruptions.
             </p>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
@@ -211,7 +216,7 @@ export default function Terms() {
               App Updates
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              We may release updates to improve the App's functionality,
+              We may release updates to improve the App&apos;s functionality,
               security, or performance. You are responsible for downloading and
               installing updates to ensure optimal performance.
             </p>
@@ -221,9 +226,9 @@ export default function Terms() {
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
               We reserve the right to modify these Terms at any time. Updated
-              Terms will be posted on this page with a new "Last updated" date.
-              Continued use of the App after changes constitutes acceptance of
-              the updated Terms.
+              Terms will be posted on this page with a new &quot;Last
+              updated&quot; date. Continued use of the App after changes
+              constitutes acceptance of the updated Terms.
             </p>
           </section>
 
@@ -302,15 +307,21 @@ export default function Terms() {
             HomeKeep - Never forget home maintenance again!
           </p>
           <div className="flex justify-center space-x-6 text-sm text-gray-400">
-            <a href="/" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
-            </a>
-            <a href="/support" className="hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/support"
+              className="hover:text-white transition-colors"
+            >
               Support
-            </a>
-            <a href="/privacy" className="hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/privacy"
+              className="hover:text-white transition-colors"
+            >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

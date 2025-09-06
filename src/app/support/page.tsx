@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Support() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 dark:bg-gray-800 shadow-sm">
+      <header className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="relative flex items-center justify-center">
             {/* Back Button - Left */}
             <div className="absolute left-0">
-              <a
+              <Link
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-white bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -27,7 +28,7 @@ export default function Support() {
                   />
                 </svg>
                 Home
-              </a>
+              </Link>
             </div>
 
             {/* Centered Content */}
@@ -44,7 +45,7 @@ export default function Support() {
                   HomeKeep Support
                 </h1>
                 <p className="text-gray-600 dark:text-gray-300">
-                  We're here to help!
+                  We&apos;re here to help!
                 </p>
               </div>
             </div>
@@ -199,8 +200,8 @@ export default function Support() {
                 How do I create a recurring task?
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Tap the "+" button, fill in your task details, then select your
-                desired interval from daily to yearly. HomeKeep will
+                Tap the &quot;+&quot; button, fill in your task details, then
+                select your desired interval from daily to yearly. HomeKeep will
                 automatically create reminders based on your schedule.
               </p>
             </div>
@@ -246,8 +247,8 @@ export default function Support() {
               <p className="text-gray-600 dark:text-gray-300">
                 Yes! Your tasks and settings are securely stored in the cloud
                 using Supabase, so your data is automatically backed up and
-                synced across your devices. You won't lose your data when you
-                upgrade or restore your device.
+                synced across your devices. You won&apos;t lose your data when
+                you upgrade or restore your device.
               </p>
             </div>
 
@@ -310,10 +311,11 @@ export default function Support() {
               <ul className="text-gray-600 dark:text-gray-300 space-y-1 ml-4">
                 <li>• Pull down on the task list to refresh</li>
                 <li>
-                  • Check that the task's due date is within your current view
+                  • Check that the task&apos;s due date is within your current
+                  view
                 </li>
                 <li>
-                  • Verify the task wasn't accidentally marked as complete
+                  • Verify the task wasn&apos;t accidentally marked as complete
                 </li>
                 <li>
                   • Try switching between different views (Upcoming, All Tasks)
@@ -340,15 +342,18 @@ export default function Support() {
             HomeKeep - Never forget home maintenance again!
           </p>
           <div className="flex justify-center space-x-6 text-sm text-gray-400">
-            <a href="/" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
-            </a>
-            <a href="/privacy" className="hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/privacy"
+              className="hover:text-white transition-colors"
+            >
               Privacy Policy
-            </a>
-            <a href="/terms" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

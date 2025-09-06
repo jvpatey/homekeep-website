@@ -1,17 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-700 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 dark:bg-gray-800 shadow-sm">
+      <header className="bg-white dark:bg-gray-800 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="relative flex items-center justify-center">
             {/* Back Button - Left */}
             <div className="absolute left-0">
-              <a
+              <Link
                 href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 dark:bg-gray-700 hover:text-teal-600 transition-all duration-200 shadow-sm"
+                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -27,7 +28,7 @@ export default function Privacy() {
                   />
                 </svg>
                 Home
-              </a>
+              </Link>
             </div>
 
             {/* Centered Content */}
@@ -43,7 +44,9 @@ export default function Privacy() {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                   Privacy Policy
                 </h1>
-                <p className="text-gray-600 dark:text-gray-300">Last updated: September 2025</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Last updated: September 2025
+                </p>
               </div>
             </div>
           </div>
@@ -58,14 +61,15 @@ export default function Privacy() {
               Overview
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              HomeKeep ("we," "our," or "us") is committed to protecting your
-              privacy. This Privacy Policy explains how we collect, use, and
-              safeguard your information when you use our mobile application.
+              HomeKeep (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is
+              committed to protecting your privacy. This Privacy Policy explains
+              how we collect, use, and safeguard your information when you use
+              our mobile application.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               <strong>Simple Summary:</strong> HomeKeep stores your tasks and
               data securely using Supabase, a trusted cloud database service. We
-              only collect the information necessary to provide the app's
+              only collect the information necessary to provide the app&apos;s
               functionality and do not share your personal data with third
               parties.
             </p>
@@ -95,12 +99,12 @@ export default function Privacy() {
             </ul>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Information We Don't Collect
+              Information We Don&apos;t Collect
             </h3>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
               <li>
-                • Personal identifying information beyond what's necessary for
-                account creation
+                • Personal identifying information beyond what&apos;s necessary
+                for account creation
               </li>
               <li>• Location data</li>
               <li>• Device contacts or photos</li>
@@ -170,15 +174,15 @@ export default function Privacy() {
               Notifications
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              HomeKeep uses iOS's notification system to remind you about
+              HomeKeep uses iOS&apos;s notification system to remind you about
               upcoming maintenance tasks. These notifications are generated
               locally on your device based on your task schedules and
               preferences.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              You can control notification permissions through your device's
-              Settings app and customize notification preferences within
-              HomeKeep.
+              You can control notification permissions through your
+              device&apos;s Settings app and customize notification preferences
+              within HomeKeep.
             </p>
           </section>
 
@@ -194,8 +198,8 @@ export default function Privacy() {
               HomeKeep uses Supabase as our cloud database service to store and
               sync your data. Supabase is a reputable service provider that
               maintains strict security and privacy standards. Your data is only
-              used to provide HomeKeep's functionality and is not shared with
-              other third parties.
+              used to provide HomeKeep&apos;s functionality and is not shared
+              with other third parties.
             </p>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
@@ -210,7 +214,7 @@ export default function Privacy() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Children's Privacy
+              Children&apos;s Privacy
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               HomeKeep is not directed to children under 13 years of age. We do
@@ -260,8 +264,8 @@ export default function Privacy() {
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               We may update this Privacy Policy from time to time. When we do,
-              we will post the updated policy on this page and update the "Last
-              updated" date at the top.
+              we will post the updated policy on this page and update the
+              &quot;Last updated&quot; date at the top.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               Continued use of HomeKeep after any changes constitutes acceptance
@@ -274,8 +278,9 @@ export default function Privacy() {
               Contact Us
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              If you have any questions about this Privacy Policy or HomeKeep's
-              privacy practices, please visit our support page to get in touch.
+              If you have any questions about this Privacy Policy or
+              HomeKeep&apos;s privacy practices, please visit our support page
+              to get in touch.
             </p>
             <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
               <a
@@ -305,15 +310,18 @@ export default function Privacy() {
             HomeKeep - Never forget home maintenance again!
           </p>
           <div className="flex justify-center space-x-6 text-sm text-gray-400">
-            <a href="/" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Home
-            </a>
-            <a href="/support" className="hover:text-white transition-colors">
+            </Link>
+            <Link
+              href="/support"
+              className="hover:text-white transition-colors"
+            >
               Support
-            </a>
-            <a href="/terms" className="hover:text-white transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

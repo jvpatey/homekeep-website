@@ -15,10 +15,10 @@ export default function Home() {
               className="rounded-3xl shadow-lg"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white dark:text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             HomeKeep
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
             Never forget home maintenance again! Track, schedule, and complete
             all your home maintenance tasks with reminders and organized task
             tracking.
@@ -120,8 +120,8 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-300">
                 Set up recurring maintenance schedules with flexible intervals
                 from daily to yearly. HomeKeep automatically reminds you when
-                tasks are due, so you'll never miss important home maintenance
-                again.
+                tasks are due, so you&apos;ll never miss important home
+                maintenance again.
               </p>
             </div>
 
