@@ -33,8 +33,9 @@ export default function Privacy() {
               explains how we collect, use, and safeguard your information when you use our mobile application.
             </p>
             <p className="text-gray-600">
-              <strong>Simple Summary:</strong> HomeKeep stores your tasks locally on your device. We don't collect, 
-              store, or share your personal data on our servers.
+              <strong>Simple Summary:</strong> HomeKeep stores your tasks and data securely using Supabase, 
+              a trusted cloud database service. We only collect the information necessary to provide the app's 
+              functionality and do not share your personal data with third parties.
             </p>
           </section>
 
@@ -50,47 +51,51 @@ export default function Privacy() {
 
             <h3 className="text-lg font-medium text-gray-900 mb-3">Information We Don't Collect</h3>
             <ul className="text-gray-600 space-y-2">
-              <li>• Personal identifying information (name, email, phone number)</li>
+              <li>• Personal identifying information beyond what's necessary for account creation</li>
               <li>• Location data</li>
               <li>• Device contacts or photos</li>
-              <li>• Usage analytics or tracking data</li>
-              <li>• Any data stored on external servers</li>
+              <li>• Browsing history or activity outside the app</li>
+              <li>• Marketing or advertising data</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your Information</h2>
             <p className="text-gray-600 mb-4">
-              All your task data and app settings are stored locally on your device. We use this information to:
+              Your task data and app settings are stored securely in our Supabase database. We use this information to:
             </p>
             <ul className="text-gray-600 space-y-2">
-              <li>• Display your maintenance tasks and schedules</li>
+              <li>• Display your maintenance tasks and schedules across your devices</li>
+              <li>• Sync your data when you sign in on multiple devices</li>
               <li>• Send you notifications based on your preferences</li>
               <li>• Maintain your app settings and customizations</li>
               <li>• Provide customer support when you contact us</li>
+              <li>• Ensure data backup and recovery</li>
             </ul>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Storage and Security</h2>
             
-            <h3 className="text-lg font-medium text-gray-900 mb-3">Local Storage</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">Cloud Storage with Supabase</h3>
             <p className="text-gray-600 mb-4">
-              Your tasks and app data are stored securely on your device using iOS's built-in data protection features. 
-              This data is not transmitted to or stored on external servers.
+              Your tasks and app data are stored securely in Supabase, a trusted cloud database service. 
+              Supabase provides enterprise-grade security with data encryption both in transit and at rest.
             </p>
 
-            <h3 className="text-lg font-medium text-gray-900 mb-3">iCloud Backup</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-3">Data Location and Compliance</h3>
             <p className="text-gray-600 mb-4">
-              If you have iCloud backup enabled on your device, your HomeKeep data may be included in your 
-              iCloud backup. This is managed entirely by Apple according to their privacy policies.
+              Your data is stored in secure data centers and Supabase complies with industry-standard 
+              security practices including SOC 2 Type II compliance and GDPR requirements.
             </p>
 
             <h3 className="text-lg font-medium text-gray-900 mb-3">Security Measures</h3>
             <ul className="text-gray-600 space-y-2">
-              <li>• Data is protected by iOS device encryption</li>
-              <li>• No data transmission to external servers</li>
-              <li>• Regular security updates through app updates</li>
+              <li>• End-to-end encryption for data transmission</li>
+              <li>• Secure authentication and access controls</li>
+              <li>• Regular security updates and monitoring</li>
+              <li>• Data backup and disaster recovery systems</li>
+              <li>• Industry-standard security protocols</li>
             </ul>
           </section>
 
@@ -108,12 +113,18 @@ export default function Privacy() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Third-Party Services</h2>
+            
+            <h3 className="text-lg font-medium text-gray-900 mb-3">Supabase Database Service</h3>
             <p className="text-gray-600 mb-4">
-              HomeKeep does not integrate with or share data with third-party services, analytics platforms, 
-              or advertising networks.
+              HomeKeep uses Supabase as our cloud database service to store and sync your data. Supabase 
+              is a reputable service provider that maintains strict security and privacy standards. 
+              Your data is only used to provide HomeKeep's functionality and is not shared with other third parties.
             </p>
+            
+            <h3 className="text-lg font-medium text-gray-900 mb-3">No Analytics or Advertising</h3>
             <p className="text-gray-600">
-              The app operates independently and does not require internet connectivity for core functionality.
+              HomeKeep does not integrate with analytics platforms, advertising networks, or marketing services. 
+              We do not track your usage patterns or share your data for advertising purposes.
             </p>
           </section>
 
@@ -128,12 +139,14 @@ export default function Privacy() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights</h2>
-            <p className="text-gray-600 mb-4">Since all data is stored locally on your device, you have complete control over your information:</p>
+            <p className="text-gray-600 mb-4">You have the following rights regarding your personal data:</p>
             <ul className="text-gray-600 space-y-2">
               <li>• <strong>Access:</strong> View all your data within the app</li>
               <li>• <strong>Modify:</strong> Edit or update any task or setting</li>
-              <li>• <strong>Delete:</strong> Remove individual tasks or all data through the app settings</li>
-              <li>• <strong>Export:</strong> Your data remains accessible to you through the app interface</li>
+              <li>• <strong>Delete:</strong> Remove individual tasks or delete your entire account and all associated data</li>
+              <li>• <strong>Export:</strong> Request a copy of your data by contacting support</li>
+              <li>• <strong>Portability:</strong> Your data can be exported in a standard format upon request</li>
+              <li>• <strong>Account Deletion:</strong> Contact support to permanently delete your account and all data</li>
             </ul>
           </section>
 

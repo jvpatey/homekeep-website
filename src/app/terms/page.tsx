@@ -79,8 +79,9 @@ export default function Terms() {
               that you have read and understood our Privacy Policy.
             </p>
             <p className="text-gray-600">
-              <strong>Key Points:</strong> All your task data is stored locally on your device. We do not collect, 
-              store, or access your personal information or task data on external servers.
+              <strong>Key Points:</strong> Your task data is stored securely in our cloud database (Supabase) 
+              to enable syncing across devices. We only collect information necessary for app functionality 
+              and do not share your data with third parties.
             </p>
           </section>
 
@@ -151,8 +152,9 @@ export default function Terms() {
               We may terminate or suspend your access to the App if you violate these Terms.
             </p>
             <p className="text-gray-600">
-              Upon termination, your license to use the App ends immediately, but locally stored data 
-              will remain on your device until you choose to delete it.
+              Upon termination, your license to use the App ends immediately. You may request deletion 
+              of your account and all associated data by contacting support, or your data will be retained 
+              according to our data retention policies outlined in our Privacy Policy.
             </p>
           </section>
 
