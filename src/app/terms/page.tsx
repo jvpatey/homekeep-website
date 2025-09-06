@@ -262,14 +262,15 @@ export default function Terms() {
             </h2>
             <p className="text-gray-600 mb-4">
               If you have any questions about these Terms of Service, please
-              contact us at:
+              visit our support page to get in touch.
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-700">
-                <strong>Email:</strong> support@homekeepapp.com
-                <br />
-                <strong>Subject:</strong> Terms of Service Question
-              </p>
+              <a 
+                href="/support" 
+                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              >
+                Contact Support
+              </a>
             </div>
           </section>
 

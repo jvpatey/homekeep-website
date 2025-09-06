@@ -216,8 +216,7 @@ export default function Privacy() {
               HomeKeep is not directed to children under 13 years of age. We do
               not knowingly collect personal information from children under 13.
               If you are a parent or guardian and believe your child has
-              provided information to us, please contact us at
-              support@homekeepapp.com.
+              provided information to us, please contact us through our support page.
             </p>
           </section>
 
@@ -275,14 +274,15 @@ export default function Privacy() {
             </h2>
             <p className="text-gray-600 mb-4">
               If you have any questions about this Privacy Policy or HomeKeep's
-              privacy practices, please contact us at:
+              privacy practices, please visit our support page to get in touch.
             </p>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-gray-700">
-                <strong>Email:</strong> support@homekeepapp.com
-                <br />
-                <strong>Subject:</strong> Privacy Policy Question
-              </p>
+              <a 
+                href="/support" 
+                className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              >
+                Contact Support
+              </a>
             </div>
           </section>
         </div>
