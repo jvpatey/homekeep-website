@@ -34,18 +34,23 @@ export default function Home() {
           {/* Phone Mockup */}
           <div className="max-w-sm mx-auto">
             <div className="bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
-              <div className="bg-black rounded-[2rem] h-[600px] w-full flex items-center justify-center">
-                <div className="text-gray-400 text-center">
-                  <Image
-                    src="/app-icon.png"
-                    alt="HomeKeep App Icon"
-                    width={80}
-                    height={80}
-                    className="rounded-2xl mx-auto mb-4 shadow-lg"
-                  />
-                  <p className="text-sm text-white">HomeKeep</p>
-                  <p className="text-xs">Available on App Store</p>
-                </div>
+              <div className="bg-black rounded-[2rem] aspect-[9/19.5] w-full overflow-hidden relative">
+                {/* Light mode screenshot */}
+                <Image
+                  src="/homekeeper-light.png"
+                  alt="HomeKeep App - Light Mode"
+                  width={390}
+                  height={844}
+                  className="w-full h-full object-contain rounded-[1.75rem] block dark:hidden"
+                />
+                {/* Dark mode screenshot */}
+                <Image
+                  src="/homekeeper-dark.png"
+                  alt="HomeKeep App - Dark Mode"
+                  width={390}
+                  height={844}
+                  className="w-full h-full object-contain rounded-[1.75rem] hidden dark:block"
+                />
               </div>
             </div>
           </div>
@@ -261,7 +266,9 @@ export default function Home() {
                 <h4 className="font-semibold text-gray-900 dark:text-white">
                   Progress Tracking
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300">Complete maintenance history</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Complete maintenance history
+                </p>
               </div>
             </div>
 
@@ -278,8 +285,12 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">Clean Interface</h4>
-                <p className="text-gray-600 dark:text-gray-300">Modern design for daily use</p>
+                <h4 className="font-semibold text-gray-900 dark:text-white">
+                  Clean Interface
+                </h4>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Modern design for daily use
+                </p>
               </div>
             </div>
           </div>
