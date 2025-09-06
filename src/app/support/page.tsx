@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Support - HomeKeep",
+  description:
+    "Get help with HomeKeep. Find answers to frequently asked questions, troubleshooting tips, and contact our support team.",
+};
 
 export default function Support() {
   return (

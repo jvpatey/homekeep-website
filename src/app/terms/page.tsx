@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service - HomeKeep",
+  description:
+    "Read the terms of service for using HomeKeep. Learn about your rights and responsibilities when using our home maintenance tracking app.",
+};
 
 export default function Terms() {
   return (

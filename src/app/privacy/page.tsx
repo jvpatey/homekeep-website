@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - HomeKeep",
+  description:
+    "Learn about how HomeKeep protects your privacy and handles your data. We're committed to keeping your home maintenance data secure and private.",
+};
 
 export default function Privacy() {
   return (

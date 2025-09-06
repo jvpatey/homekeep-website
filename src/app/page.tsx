@@ -1,4 +1,11 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "HomeKeep - Never forget home maintenance again!",
+  description:
+    "Track, schedule, and complete all your home maintenance tasks with reminders and organized task tracking. Never miss important home maintenance again!",
+};
 
 export default function Home() {
   return (
