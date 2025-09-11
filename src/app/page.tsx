@@ -46,7 +46,7 @@ export default function Home() {
           <div className="flex justify-center mb-16">
             <div className="text-center">
               <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                Scan to download on your phone
+                Scan to download on your device
               </h3>
               <QRCode
                 url={APP_CONFIG.appStoreUrl}

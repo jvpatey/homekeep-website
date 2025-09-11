@@ -64,9 +64,6 @@ export default function QRCode({
           className="rounded"
         />
       </div>
-      <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center max-w-xs">
-        Scan to download HomeKeep on your mobile device
-      </p>
     </div>
   );
 }

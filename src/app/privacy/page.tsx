@@ -11,55 +11,6 @@ export const metadata: Metadata = {
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="relative flex items-center justify-center">
-            {/* Back Button - Left */}
-            <div className="absolute left-0">
-              <Link
-                href="/"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-teal-600 transition-all duration-200 shadow-sm"
-              >
-                <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                  />
-                </svg>
-                Home
-              </Link>
-            </div>
-
-            {/* Centered Content */}
-            <div className="flex items-center space-x-4">
-              <Image
-                src="/homekeep-logo.png"
-                alt="HomeKeep Logo"
-                width={60}
-                height={60}
-                className="rounded-2xl"
-              />
-              <div className="text-center">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                  Privacy Policy
-                </h1>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Last updated: September 2025
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 prose max-w-none">
@@ -289,13 +240,13 @@ export default function Privacy() {
               HomeKeep&apos;s privacy practices, please visit our support page
               to get in touch.
             </p>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <a
+            <div className="flex justify-center">
+              <Link
                 href="/support"
-                className="inline-flex items-center px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors font-medium"
+                className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-xl font-semibold text-lg hover:bg-teal-700 transition-all duration-200 hover:scale-105 hover:shadow-lg"
               >
                 Contact Support
-              </a>
+              </Link>
             </div>
           </section>
         </div>
