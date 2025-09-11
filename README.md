@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HomeKeep Website
 
-## Getting Started
+A simple companion website for the HomeKeep mobile app. Built with Next.js and Tailwind CSS.
 
-First, run the development server:
+## 🏠 About
+
+HomeKeep is a mobile app that helps homeowners track and schedule home maintenance tasks. This website provides information about the app and links to download it from the App Store.
+
+**Download the app**: [App Store](https://apps.apple.com/ca/app/homekeep/id6751912377)  
+**Mobile App Repository**: [homekeep-mobile](https://github.com/jvpatey/homekeep-mobile)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd homekeep-website
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── components/          # UI components
+│   ├── support/            # Support page
+│   ├── privacy/            # Privacy policy
+│   ├── terms/              # Terms of service
+│   └── page.tsx            # Homepage
+└── public/                 # Images and assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- App information and download links
+- QR codes for mobile downloads
+- Support contact form
+- Privacy policy and terms of service
+- Responsive design (desktop and mobile)
+- Dark/light mode support
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Build and deploy to your preferred hosting platform:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+Compatible with Vercel, Netlify, or any static hosting service.
+
+## 📞 Contact
+
+- **Support**: [Contact Support](/support)
+- **App Store**: [Download HomeKeep](https://apps.apple.com/ca/app/homekeep/id6751912377)
+- **Mobile App Code**: [homekeep-mobile](https://github.com/jvpatey/homekeep-mobile)
