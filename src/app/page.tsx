@@ -1,5 +1,8 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import AppDownloadSection from "./components/AppDownloadSection";
+import QRCode from "./components/QRCode";
+import { APP_CONFIG } from "./config/app";
 
 export const metadata: Metadata = {
   title: "HomeKeep - Never forget home maintenance again!",
@@ -31,10 +34,25 @@ export default function Home() {
             tracking.
           </p>
 
-          {/* App Store Button Placeholder */}
+          {/* App Store Button */}
           <div className="flex justify-center mb-16">
-            <div className="bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-teal-700 transition-colors cursor-pointer">
-              Download on the App Store
+            <AppDownloadSection
+              appStoreUrl={APP_CONFIG.appStoreUrl}
+              variant="primary"
+            />
+          </div>
+
+          {/* QR Code for Mobile Users */}
+          <div className="flex justify-center mb-16">
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
+                Scan to download on your phone
+              </h3>
+              <QRCode
+                url={APP_CONFIG.appStoreUrl}
+                size={150}
+                className="items-center"
+              />
             </div>
           </div>
 
@@ -317,9 +335,10 @@ export default function Home() {
           </p>
 
           {/* App Store Button */}
-          <div className="bg-white text-teal-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors cursor-pointer inline-block border-2 border-white">
-            Download on the App Store
-          </div>
+          <AppDownloadSection
+            appStoreUrl={APP_CONFIG.appStoreUrl}
+            variant="secondary"
+          />
         </div>
       </section>
 
