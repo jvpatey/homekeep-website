@@ -22,7 +22,7 @@ export default function Home() {
               alt="HomeKeep Logo"
               width={120}
               height={120}
-              className="rounded-3xl shadow-lg"
+              className="rounded-3xl shadow-lg border border-gray-100 dark:border-gray-600"
             />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
@@ -324,12 +324,12 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-teal-600">
+      <section className="py-20 bg-slate-700">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to keep your home in perfect condition?
           </h2>
-          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
             Download HomeKeep today and experience the peace of mind that comes
             with a perfectly maintained home.
           </p>

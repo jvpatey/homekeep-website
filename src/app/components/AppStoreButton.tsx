@@ -17,8 +17,8 @@ export default function AppStoreButton({
     "inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-200 hover:scale-105 hover:shadow-lg";
 
   const variantClasses = {
-    primary: "bg-teal-600 text-white hover:bg-teal-700",
-    secondary: "bg-white text-teal-600 hover:bg-gray-50 border-2 border-white",
+    primary: "bg-slate-700 text-white hover:bg-slate-800",
+    secondary: "bg-white text-slate-700 hover:bg-gray-50 border-2 border-white",
   };
 
   return (

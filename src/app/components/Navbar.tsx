@@ -41,7 +41,7 @@ export default function Navbar() {
               alt="HomeKeep Logo"
               width={32}
               height={32}
-              className="rounded-lg"
+              className="rounded-lg border border-gray-100 dark:border-gray-600"
             />
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               {pageTitle || "HomeKeep"}
@@ -53,14 +53,14 @@ export default function Navbar() {
             {!isHomePage && (
               <Link
                 href="/"
-                className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium mr-6"
+                className="text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 transition-colors font-medium mr-6"
               >
                 Home
               </Link>
             )}
             <Link
               href="/support"
-              className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium"
+              className="text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 transition-colors font-medium"
             >
               Support
             </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
               {!isHomePage && (
                 <Link
                   href="/"
-                  className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
+                  className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -114,7 +114,7 @@ export default function Navbar() {
               )}
               <Link
                 href="/support"
-                className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
+                className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Support

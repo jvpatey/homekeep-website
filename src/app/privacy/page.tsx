@@ -243,7 +243,7 @@ export default function Privacy() {
             <div className="flex justify-center">
               <Link
                 href="/support"
-                className="inline-flex items-center px-6 py-3 bg-teal-600 text-white rounded-xl font-semibold text-lg hover:bg-teal-700 transition-all duration-200 hover:scale-105 hover:shadow-lg"
+                className="inline-flex items-center px-6 py-3 bg-slate-700 text-white rounded-xl font-semibold text-lg hover:bg-slate-800 transition-all duration-200 hover:scale-105 hover:shadow-lg"
               >
                 Contact Support
               </Link>
