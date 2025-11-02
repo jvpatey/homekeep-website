@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Support() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950">
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         {/* Contact Information */}
@@ -31,7 +31,7 @@ export default function Support() {
               </h3>
               <div className="space-y-2">
                 <p className="text-gray-700 dark:text-gray-300">
-                  <strong>Current Version:</strong> 1.0.0
+                  <strong>Current Version:</strong> 1.2.0
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
                   <strong>Platform:</strong> iOS

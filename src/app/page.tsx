@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import AppDownloadSection from "./components/AppDownloadSection";
 import QRCode from "./components/QRCode";
 import { APP_CONFIG } from "./config/app";
@@ -370,7 +371,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-gray-900 dark:bg-black">
+      <footer className="relative z-10 py-12 bg-gray-900 dark:bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center">
             <div className="flex justify-center mb-4">
@@ -388,15 +389,15 @@ export default function Home() {
             </p>
 
             <div className="flex justify-center space-x-8 text-sm text-gray-400">
-              <a href="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
-              </a>
-              <a href="/support" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="/support" className="hover:text-white transition-colors">
                 Support
-              </a>
+              </Link>
             </div>
 
             <div className="mt-8 pt-8 border-t border-gray-800">

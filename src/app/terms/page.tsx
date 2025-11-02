@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950">
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 prose max-w-none">
