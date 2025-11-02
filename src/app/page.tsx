@@ -9,9 +9,9 @@ import { useState } from "react";
 export default function Home() {
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950 relative overflow-hidden">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-50/30 to-indigo-100/50 dark:from-gray-800/50 dark:via-purple-900/20 dark:to-indigo-900/30 animate-pulse-slow"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 via-teal-200/30 to-orange-200/40 dark:from-blue-800/15 dark:via-teal-800/15 dark:to-orange-800/15 animate-pulse-slow"></div>
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-start pt-20 md:pt-32 px-6 pb-16 md:pb-24 max-w-7xl mx-auto">
@@ -179,9 +179,9 @@ export default function Home() {
               }`}
               onClick={() => setSelectedFeature(selectedFeature === 3 ? null : 3)}
             >
-              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+              <div className="w-16 h-16 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <svg
-                  className="w-8 h-8 text-purple-600 dark:text-purple-400 transition-transform duration-300 group-hover:scale-125"
+                  className="w-8 h-8 text-teal-600 dark:text-teal-400 transition-transform duration-300 group-hover:scale-125"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
