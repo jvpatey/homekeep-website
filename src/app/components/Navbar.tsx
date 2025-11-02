@@ -1,18 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,9 +31,7 @@ export default function Navbar() {
   const isHomePage = pathname === "/";
 
   return (
-    <nav className={`glass sticky top-0 z-50 border-b border-white/20 transition-all duration-500 ${
-      isMounted ? 'animate-slide-in' : 'opacity-0'
-    }`}>
+    <nav className="glass sticky top-0 z-50 border-b border-white/20 animate-slide-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

@@ -5,10 +5,39 @@ import Link from "next/link";
 import AppDownloadSection from "./components/AppDownloadSection";
 import QRCode from "./components/QRCode";
 import { APP_CONFIG } from "./config/app";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
+  const [visibleElements, setVisibleElements] = useState<Set<number>>(new Set([0]));
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = entry.target.getAttribute('data-section-index');
+            if (index) {
+              setVisibleElements((prev) => new Set([...prev, parseInt(index)]));
+            }
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950 relative overflow-hidden">
       {/* Animated gradient background */}
@@ -49,10 +78,14 @@ export default function Home() {
 
       {/* Preview Section - Phone + QR Code */}
       <section className="py-16 md:py-24 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6">
+        <div 
+          ref={(el) => { sectionRefs.current[1] = el; }}
+          data-section-index="1"
+          className="max-w-7xl mx-auto px-6"
+        >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Phone Mockup */}
-            <div className="flex justify-center animate-fade-in-up animation-delay-450">
+            <div className={`flex justify-center fade-on-scroll ${visibleElements.has(1) ? 'visible' : ''}`}>
               <div className="max-w-[300px] w-full">
                 <div className="glass-card rounded-[2.5rem] p-2 shadow-2xl transform transition-transform duration-300 hover:scale-105">
                   <div className="bg-black rounded-[2rem] aspect-[9/19.5] w-full overflow-hidden relative">
@@ -78,7 +111,7 @@ export default function Home() {
             </div>
 
             {/* QR Code */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left animate-fade-in-up animation-delay-600">
+            <div className={`flex flex-col items-center md:items-start text-center md:text-left fade-on-scroll ${visibleElements.has(1) ? 'visible' : ''}`} style={{ transitionDelay: '150ms' }}>
               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 Download in Seconds
               </h3>
@@ -97,8 +130,12 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+        <div 
+          ref={(el) => { sectionRefs.current[2] = el; }}
+          data-section-index="2"
+          className="max-w-7xl mx-auto px-6"
+        >
+          <div className={`text-center mb-16 slide-up-on-scroll ${visibleElements.has(2) ? 'visible' : ''}`}>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Everything you need to maintain your home
             </h2>
@@ -110,9 +147,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Feature 1 */}
             <div 
-              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 scale-on-scroll ${visibleElements.has(2) ? 'visible' : ''} ${
                 selectedFeature === 1 ? 'scale-105 shadow-2xl' : ''
               }`}
+              style={{ transitionDelay: '100ms' }}
               onClick={() => setSelectedFeature(selectedFeature === 1 ? null : 1)}
             >
               <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -142,9 +180,10 @@ export default function Home() {
 
             {/* Feature 2 */}
             <div 
-              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 scale-on-scroll ${visibleElements.has(2) ? 'visible' : ''} ${
                 selectedFeature === 2 ? 'scale-105 shadow-2xl' : ''
               }`}
+              style={{ transitionDelay: '200ms' }}
               onClick={() => setSelectedFeature(selectedFeature === 2 ? null : 2)}
             >
               <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -175,9 +214,10 @@ export default function Home() {
 
             {/* Feature 3 */}
             <div 
-              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 scale-on-scroll ${visibleElements.has(2) ? 'visible' : ''} ${
                 selectedFeature === 3 ? 'scale-105 shadow-2xl' : ''
               }`}
+              style={{ transitionDelay: '300ms' }}
               onClick={() => setSelectedFeature(selectedFeature === 3 ? null : 3)}
             >
               <div className="w-16 h-16 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -210,13 +250,17 @@ export default function Home() {
 
       {/* Key Features List */}
       <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
+        <div 
+          ref={(el) => { sectionRefs.current[3] = el; }}
+          data-section-index="3"
+          className="max-w-7xl mx-auto px-6"
+        >
+          <h2 className={`text-3xl font-bold text-gray-900 dark:text-white text-center mb-12 slide-up-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`}>
             Powerful features for every homeowner
           </h2>
 
           <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '100ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -238,7 +282,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '200ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -260,7 +304,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -282,7 +326,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -304,7 +348,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '500ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -326,7 +370,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
+            <div className={`glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2 fade-on-scroll ${visibleElements.has(3) ? 'visible' : ''}`} style={{ transitionDelay: '600ms' }}>
               <svg
                 className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
@@ -353,20 +397,26 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-slate-700">
-        <div className="max-w-7xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-white mb-6">
+        <div 
+          ref={(el) => { sectionRefs.current[4] = el; }}
+          data-section-index="4"
+          className="max-w-7xl mx-auto text-center px-6"
+        >
+          <h2 className={`text-4xl font-bold text-white mb-6 slide-up-on-scroll ${visibleElements.has(4) ? 'visible' : ''}`}>
             Ready to keep your home in perfect condition?
           </h2>
-          <p className="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
+          <p className={`text-xl text-slate-200 mb-8 max-w-2xl mx-auto fade-on-scroll ${visibleElements.has(4) ? 'visible' : ''}`} style={{ transitionDelay: '150ms' }}>
             Download HomeKeep today and experience the peace of mind that comes
             with a perfectly maintained home.
           </p>
 
           {/* App Store Button */}
-          <AppDownloadSection
-            appStoreUrl={APP_CONFIG.appStoreUrl}
-            variant="secondary"
-          />
+          <div className={`fade-on-scroll ${visibleElements.has(4) ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
+            <AppDownloadSection
+              appStoreUrl={APP_CONFIG.appStoreUrl}
+              variant="secondary"
+            />
+          </div>
         </div>
       </section>
 

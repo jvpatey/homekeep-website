@@ -12,8 +12,8 @@ export default function Terms() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950">
       {/* Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <div className="glass-card rounded-lg p-8 prose max-w-none">
+      <main className="max-w-4xl mx-auto px-6 py-12 animate-fade-in-up">
+        <div className="glass-card rounded-lg p-8 prose max-w-none animate-scale-in animation-delay-150">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Agreement to Terms
