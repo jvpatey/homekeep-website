@@ -15,7 +15,7 @@ export default function Support() {
       {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
         {/* Contact Information */}
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 mb-8">
+        <section className="glass-card rounded-2xl p-8 mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Get Support
           </h2>
@@ -45,7 +45,7 @@ export default function Support() {
         </section>
 
         {/* FAQ Section */}
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8 mb-8">
+        <section className="glass-card rounded-2xl p-8 mb-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Frequently Asked Questions
           </h2>
@@ -122,7 +122,7 @@ export default function Support() {
         </section>
 
         {/* Troubleshooting */}
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
+        <section className="glass-card rounded-2xl p-8">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Troubleshooting
           </h2>

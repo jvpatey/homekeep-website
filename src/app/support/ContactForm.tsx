@@ -78,10 +78,10 @@ export default function ContactForm() {
       </h3>
 
       {status.type === "success" && (
-        <div className="mb-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+        <div className="mb-4 p-4 glass-card bg-green-50/50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl animate-slide-in">
           <div className="flex items-center">
             <svg
-              className="w-5 h-5 text-green-600 dark:text-green-400 mr-2"
+              className="w-5 h-5 text-green-600 dark:text-green-400 mr-2 animate-fade-in"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -99,10 +99,10 @@ export default function ContactForm() {
       )}
 
       {status.type === "error" && (
-        <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+        <div className="mb-4 p-4 glass-card bg-red-50/50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl animate-slide-in">
           <div className="flex items-center">
             <svg
-              className="w-5 h-5 text-red-600 dark:text-red-400 mr-2"
+              className="w-5 h-5 text-red-600 dark:text-red-400 mr-2 animate-fade-in"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -208,7 +208,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status.type === "loading"}
-          className="w-full bg-slate-700 text-white py-2 px-4 rounded-lg hover:bg-slate-800 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          className="w-full bg-slate-700 text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-all duration-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
         >
           {status.type === "loading" ? (
             <>

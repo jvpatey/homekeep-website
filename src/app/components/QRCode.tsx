@@ -15,6 +15,7 @@ export default function QRCode({
   className = "",
 }: QRCodeProps) {
   const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Using QR Server API to generate QR code
@@ -24,17 +25,21 @@ export default function QRCode({
     setQrCodeUrl(qrUrl);
   }, [url, size]);
 
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
+
   // Don't render the image until we have a valid URL
   if (!qrCodeUrl) {
     return (
       <div className={`flex flex-col items-center ${className}`}>
-        <div className="bg-white p-4 rounded-lg shadow-lg">
+        <div className="glass-card p-4 rounded-lg shadow-xl transition-transform duration-300">
           <div
-            className="rounded bg-gray-100 animate-pulse flex items-center justify-center"
+            className="shimmer rounded-lg flex items-center justify-center"
             style={{ width: size, height: size }}
           >
             <svg
-              className="w-8 h-8 text-gray-400"
+              className="w-12 h-12 text-gray-400 opacity-50"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -46,7 +51,7 @@ export default function QRCode({
             </svg>
           </div>
         </div>
-        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center max-w-xs">
+        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center max-w-xs animate-pulse">
           Generating QR code...
         </p>
       </div>
@@ -55,13 +60,16 @@ export default function QRCode({
 
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <div className="bg-white p-4 rounded-lg shadow-lg">
+      <div className={`glass-card p-4 rounded-lg shadow-xl transition-all duration-300 hover:scale-105 ${
+        isLoaded ? 'animate-fade-in' : ''
+      }`}>
         <Image
           src={qrCodeUrl}
           alt={`QR code for ${url}`}
           width={size}
           height={size}
-          className="rounded"
+          className="rounded-lg"
+          onLoad={handleImageLoad}
         />
       </div>
     </div>

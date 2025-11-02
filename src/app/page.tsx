@@ -1,41 +1,43 @@
+"use client";
+
 import Image from "next/image";
-import type { Metadata } from "next";
 import AppDownloadSection from "./components/AppDownloadSection";
 import QRCode from "./components/QRCode";
 import { APP_CONFIG } from "./config/app";
-
-export const metadata: Metadata = {
-  title: "HomeKeep - Never forget home maintenance again!",
-  description:
-    "Track, schedule, and complete all your home maintenance tasks with reminders and organized task tracking. Never miss important home maintenance again!",
-};
+import { useState } from "react";
 
 export default function Home() {
+  const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-50/30 to-indigo-100/50 dark:from-gray-800/50 dark:via-purple-900/20 dark:to-indigo-900/30 animate-pulse-slow"></div>
+      
       {/* Hero Section */}
-      <section className="px-6 py-20 max-w-7xl mx-auto">
-        <div className="text-center">
-          <div className="flex justify-center mb-8">
-            <Image
-              src="/homekeep-logo.png"
-              alt="HomeKeep Logo"
-              width={120}
-              height={120}
-              className="rounded-3xl shadow-lg border border-gray-100 dark:border-gray-600"
-            />
+      <section className="relative min-h-screen flex items-center justify-center px-6 py-12 md:py-16 max-w-7xl mx-auto">
+        <div className="text-center w-full">
+          <div className="flex justify-center mb-4 animate-fade-in">
+            <div className="animate-float">
+              <Image
+                src="/homekeep-logo.png"
+                alt="HomeKeep Logo"
+                width={90}
+                height={90}
+                className="rounded-3xl shadow-lg border border-white/30 dark:border-gray-600"
+              />
+            </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-3 animate-fade-in-up">
             HomeKeep
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto animate-fade-in-up animation-delay-150">
             Never forget home maintenance again! Track, schedule, and complete
             all your home maintenance tasks with reminders and organized task
             tracking.
           </p>
 
           {/* App Store Button */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-3 animate-fade-in-up animation-delay-300">
             <AppDownloadSection
               appStoreUrl={APP_CONFIG.appStoreUrl}
               variant="primary"
@@ -43,22 +45,22 @@ export default function Home() {
           </div>
 
           {/* QR Code for Mobile Users */}
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-6 animate-fade-in-up animation-delay-450">
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                Scan to download on your device
+              <h3 className="text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Scan to download
               </h3>
               <QRCode
                 url={APP_CONFIG.appStoreUrl}
-                size={150}
+                size={120}
                 className="items-center"
               />
             </div>
           </div>
 
           {/* Phone Mockup */}
-          <div className="max-w-sm mx-auto">
-            <div className="bg-gray-800 rounded-[2.5rem] p-2 shadow-2xl">
+          <div className="max-w-sm mx-auto animate-fade-in-up animation-delay-600">
+            <div className="glass-card rounded-[2.5rem] p-2 shadow-2xl transform transition-transform duration-300 hover:scale-105">
               <div className="bg-black rounded-[2rem] aspect-[9/19.5] w-full overflow-hidden relative">
                 {/* Light mode screenshot */}
                 <Image
@@ -83,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -94,12 +96,17 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Feature 1 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div 
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+                selectedFeature === 1 ? 'scale-105 shadow-2xl' : ''
+              }`}
+              onClick={() => setSelectedFeature(selectedFeature === 1 ? null : 1)}
+            >
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <svg
-                  className="w-8 h-8 text-teal-600"
+                  className="w-8 h-8 text-teal-600 dark:text-teal-400 transition-transform duration-300 group-hover:scale-125"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -123,10 +130,15 @@ export default function Home() {
             </div>
 
             {/* Feature 2 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div 
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+                selectedFeature === 2 ? 'scale-105 shadow-2xl' : ''
+              }`}
+              onClick={() => setSelectedFeature(selectedFeature === 2 ? null : 2)}
+            >
+              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-green-600 dark:text-green-400 transition-transform duration-300 group-hover:scale-125"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -151,10 +163,15 @@ export default function Home() {
             </div>
 
             {/* Feature 3 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div 
+              className={`glass-card glass-hover text-center p-6 rounded-2xl group cursor-pointer transition-all duration-300 ${
+                selectedFeature === 3 ? 'scale-105 shadow-2xl' : ''
+              }`}
+              onClick={() => setSelectedFeature(selectedFeature === 3 ? null : 3)}
+            >
+              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <svg
-                  className="w-8 h-8 text-purple-600"
+                  className="w-8 h-8 text-purple-600 dark:text-purple-400 transition-transform duration-300 group-hover:scale-125"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -181,16 +198,16 @@ export default function Home() {
       </section>
 
       {/* Key Features List */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">
             Powerful features for every homeowner
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex items-start space-x-3">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -201,7 +218,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   Recurring Task Schedules
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -210,9 +227,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -223,7 +240,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   9 Comprehensive Categories
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -232,9 +249,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -245,7 +262,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   Priority-Based Organization
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -254,9 +271,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -267,7 +284,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   Smart Notifications
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -276,9 +293,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -289,7 +306,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   Progress Tracking
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -298,9 +315,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-3">
+            <div className="glass-card flex items-start space-x-3 p-4 rounded-xl group cursor-pointer transition-all duration-300 hover:scale-105 hover:translate-x-2">
               <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1"
+                className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -311,7 +328,7 @@ export default function Home() {
                 />
               </svg>
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white">
+                <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                   Clean Interface
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
@@ -324,8 +341,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-slate-700">
-        <div className="max-w-4xl mx-auto text-center px-6">
+      <section className="py-16 md:py-24 bg-slate-700">
+        <div className="max-w-7xl mx-auto text-center px-6">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to keep your home in perfect condition?
           </h2>
