@@ -14,71 +14,81 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-50/30 to-indigo-100/50 dark:from-gray-800/50 dark:via-purple-900/20 dark:to-indigo-900/30 animate-pulse-slow"></div>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-12 md:py-16 max-w-7xl mx-auto">
+      <section className="relative min-h-screen flex items-start pt-20 md:pt-32 px-6 pb-16 md:pb-24 max-w-7xl mx-auto">
         <div className="text-center w-full">
-          <div className="flex justify-center mb-4 animate-fade-in">
+          <div className="flex justify-center mb-6 animate-fade-in">
             <div className="animate-float">
               <Image
                 src="/homekeep-logo.png"
                 alt="HomeKeep Logo"
-                width={90}
-                height={90}
+                width={120}
+                height={120}
                 className="rounded-3xl shadow-lg border border-white/30 dark:border-gray-600"
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-3 animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up">
             HomeKeep
           </h1>
-          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto animate-fade-in-up animation-delay-150">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up animation-delay-150">
             Never forget home maintenance again! Track, schedule, and complete
             all your home maintenance tasks with reminders and organized task
             tracking.
           </p>
 
           {/* App Store Button */}
-          <div className="flex justify-center mb-3 animate-fade-in-up animation-delay-300">
+          <div className="flex justify-center animate-fade-in-up animation-delay-300">
             <AppDownloadSection
               appStoreUrl={APP_CONFIG.appStoreUrl}
               variant="primary"
             />
           </div>
+        </div>
+      </section>
 
-          {/* QR Code for Mobile Users */}
-          <div className="flex justify-center mb-6 animate-fade-in-up animation-delay-450">
-            <div className="text-center">
-              <h3 className="text-xs md:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Scan to download
+      {/* Preview Section - Phone + QR Code */}
+      <section className="py-16 md:py-24 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Phone Mockup */}
+            <div className="flex justify-center animate-fade-in-up animation-delay-450">
+              <div className="max-w-[300px] w-full">
+                <div className="glass-card rounded-[2.5rem] p-2 shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                  <div className="bg-black rounded-[2rem] aspect-[9/19.5] w-full overflow-hidden relative">
+                    {/* Light mode screenshot */}
+                    <Image
+                      src="/homekeeper-light.png"
+                      alt="HomeKeep App - Light Mode"
+                      width={390}
+                      height={844}
+                      className="w-full h-full object-contain rounded-[1.75rem] block dark:hidden"
+                    />
+                    {/* Dark mode screenshot */}
+                    <Image
+                      src="/homekeeper-dark.png"
+                      alt="HomeKeep App - Dark Mode"
+                      width={390}
+                      height={844}
+                      className="w-full h-full object-contain rounded-[1.75rem] hidden dark:block"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* QR Code */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left animate-fade-in-up animation-delay-600">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                Download in Seconds
               </h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-md">
+                Scan the QR code with your device to download HomeKeep directly from the App Store
+              </p>
               <QRCode
                 url={APP_CONFIG.appStoreUrl}
-                size={120}
+                size={200}
                 className="items-center"
               />
-            </div>
-          </div>
-
-          {/* Phone Mockup */}
-          <div className="max-w-sm mx-auto animate-fade-in-up animation-delay-600">
-            <div className="glass-card rounded-[2.5rem] p-2 shadow-2xl transform transition-transform duration-300 hover:scale-105">
-              <div className="bg-black rounded-[2rem] aspect-[9/19.5] w-full overflow-hidden relative">
-                {/* Light mode screenshot */}
-                <Image
-                  src="/homekeeper-light.png"
-                  alt="HomeKeep App - Light Mode"
-                  width={390}
-                  height={844}
-                  className="w-full h-full object-contain rounded-[1.75rem] block dark:hidden"
-                />
-                {/* Dark mode screenshot */}
-                <Image
-                  src="/homekeeper-dark.png"
-                  alt="HomeKeep App - Dark Mode"
-                  width={390}
-                  height={844}
-                  className="w-full h-full object-contain rounded-[1.75rem] hidden dark:block"
-                />
-              </div>
             </div>
           </div>
         </div>
