@@ -31,13 +31,15 @@ export default function Support() {
               </h3>
               <div className="space-y-2">
                 <p className="text-gray-700 dark:text-gray-300">
-                  <strong>Current Version:</strong> 1.2.0
+                  <strong>Current Version:</strong> 1.3.0
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
-                  <strong>Platform:</strong> iOS
+                  <strong>Platforms:</strong> iOS and Android
                 </p>
                 <p className="text-gray-700 dark:text-gray-300">
-                  <strong>Compatibility:</strong> iOS 14.0 or later
+                  <strong>Compatibility:</strong> iOS 14.0 or later; Android
+                  requirements are listed on Google Play when the Android build
+                  is available.
                 </p>
               </div>
             </div>

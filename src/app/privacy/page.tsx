@@ -11,9 +11,12 @@ export const metadata: Metadata = {
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-teal-100 to-orange-100 dark:from-blue-950 dark:via-teal-950 dark:to-orange-950">
-      {/* Content */}
       <main className="max-w-4xl mx-auto px-6 py-12 animate-fade-in-up">
         <div className="glass-card rounded-lg p-8 prose max-w-none animate-scale-in animation-delay-150">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            Last updated: May 11, 2026
+          </p>
+
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               Overview
@@ -22,14 +25,16 @@ export default function Privacy() {
               HomeKeep (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is
               committed to protecting your privacy. This Privacy Policy explains
               how we collect, use, and safeguard your information when you use
-              our mobile application.
+              the HomeKeep mobile application (iOS and Android) and our website
+              at homekeep.app (together, the &quot;Services&quot;).
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              <strong>Simple Summary:</strong> HomeKeep stores your tasks and
-              data securely using Supabase, a trusted cloud database service. We
-              only collect the information necessary to provide the app&apos;s
-              functionality and do not share your personal data with third
-              parties.
+              <strong>Simple summary:</strong> We use service providers such as
+              Supabase to host your account and app data. We do not sell your
+              personal information. We use additional providers only where needed
+              to operate specific features (for example weather, optional address
+              search, push notifications, or our support form and website
+              analytics), as described below.
             </p>
           </section>
 
@@ -39,35 +44,145 @@ export default function Privacy() {
             </h2>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Information You Provide
+              Account and authentication
             </h3>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
               <li>
-                • <strong>Task Information:</strong> Task names, descriptions,
-                due dates, categories, and completion status
+                • <strong>Email and password:</strong> If you register with
+                email, your email address and credentials are processed through
+                Supabase Auth.
               </li>
               <li>
-                • <strong>App Settings:</strong> Notification preferences, app
-                customization settings
-              </li>
-              <li>
-                • <strong>Support Communications:</strong> Information you
-                provide when contacting support
+                • <strong>Sign in with Apple:</strong> If you use Apple Sign-In,
+                Apple may share an account identifier and, when permitted, your
+                name or email with us via Supabase; we use that to create or
+                link your account.
               </li>
             </ul>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Information We Don&apos;t Collect
+              App content and activity
+            </h3>
+            <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
+              <li>
+                • <strong>Tasks and maintenance data:</strong> Task names,
+                descriptions, due dates, priorities, categories, completion
+                status, recurring rules, and related maintenance information.
+              </li>
+              <li>
+                • <strong>Guided plans and routines:</strong> Data you generate
+                when using seasonal or guided maintenance plans (for example
+                questionnaire answers and applied routines).
+              </li>
+              <li>
+                • <strong>Profile and settings:</strong> Display name and
+                profile fields stored with your account; notification
+                preferences; app customization; device timezone saved to help
+                schedule reminders accurately.
+              </li>
+              <li>
+                • <strong>Optional home address:</strong> Address fields and
+                coordinates you choose to save for display and for local weather
+                (see Location and address below).
+              </li>
+              <li>
+                • <strong>Push notifications:</strong> A push token associated
+                with your device may be stored so we can send reminder
+                notifications you have opted into.
+              </li>
+              <li>
+                • <strong>Optional equipment manuals:</strong> PDF files and
+                related metadata you upload to your account; if you attach an
+                image, we process the image you select from your camera or photo
+                library solely for that upload.
+              </li>
+            </ul>
+
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
+              Website
+            </h3>
+            <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
+              <li>
+                • <strong>Support form:</strong> Name, email, subject, and
+                message when you contact us through homekeep.app.
+              </li>
+              <li>
+                • <strong>Site analytics:</strong> Our website uses Vercel
+                Analytics to collect privacy-focused, aggregate usage and
+                performance metrics about visits to homekeep.app (not sold for
+                advertising). See{" "}
+                <a
+                  href="https://vercel.com/docs/analytics"
+                  className="text-teal-700 dark:text-teal-400 underline hover:no-underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Vercel Analytics
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://vercel.com/legal/privacy-policy"
+                  className="text-teal-700 dark:text-teal-400 underline hover:no-underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Vercel&apos;s privacy policy
+                </a>
+                .
+              </li>
+            </ul>
+
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
+              Location and address
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              HomeKeep does <strong>not</strong> continuously track your GPS
+              location in the background. If you choose to save a home address,
+              we store the address and may store coordinates derived from it to
+              show local weather on your dashboard.
+            </p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              When you use address autocomplete (if enabled in the app), search
+              text you type may be sent to{" "}
+              <a
+                href="https://www.mapbox.com/legal/privacy"
+                className="text-teal-700 dark:text-teal-400 underline hover:no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mapbox
+              </a>{" "}
+              to return suggestions. When we resolve coordinates or fetch
+              weather, limited location-related parameters (such as city or
+              coordinates) are sent to{" "}
+              <a
+                href="https://open-meteo.com/en/terms"
+                className="text-teal-700 dark:text-teal-400 underline hover:no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open-Meteo
+              </a>{" "}
+              over an encrypted connection.
+            </p>
+
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
+              What we don&apos;t do
             </h3>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
               <li>
-                • Personal identifying information beyond what&apos;s necessary
-                for account creation
+                • We do not sell your personal information or use it for
+                cross-app behavioral advertising.
               </li>
-              <li>• Location data</li>
-              <li>• Device contacts or photos</li>
-              <li>• Browsing history or activity outside the app</li>
-              <li>• Marketing or advertising data</li>
+              <li>
+                • We do not read your device contacts or access your photo
+                library except when you explicitly choose a photo or PDF for an
+                upload.
+              </li>
+              <li>
+                • The mobile app does not embed third-party analytics or
+                advertising SDKs for tracking your in-app behavior.
+              </li>
             </ul>
           </section>
 
@@ -76,19 +191,30 @@ export default function Privacy() {
               How We Use Your Information
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Your task data and app settings are stored securely in our
-              Supabase database. We use this information to:
+              We use the information above to operate the Services, including to:
             </p>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
               <li>
-                • Display your maintenance tasks and schedules across your
-                devices
+                • Authenticate you, sync your tasks and settings across devices,
+                and maintain your account.
               </li>
-              <li>• Sync your data when you sign in on multiple devices</li>
-              <li>• Send you notifications based on your preferences</li>
-              <li>• Maintain your app settings and customizations</li>
-              <li>• Provide customer support when you contact us</li>
-              <li>• Ensure data backup and recovery</li>
+              <li>
+                • Send push or local notifications according to your preferences
+                and schedules.
+              </li>
+              <li>
+                • Show optional dashboard features such as weather when you have
+                saved location information.
+              </li>
+              <li>• Store optional manuals and attachments you upload.</li>
+              <li>
+                • Respond to support requests and improve reliability and
+                security.
+              </li>
+              <li>
+                • Measure aggregate traffic and performance on our website
+                (Vercel Analytics).
+              </li>
             </ul>
           </section>
 
@@ -98,32 +224,36 @@ export default function Privacy() {
             </h2>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Cloud Storage with Supabase
+              Cloud storage with Supabase
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Your tasks and app data are stored securely in Supabase, a trusted
-              cloud database service. Supabase provides enterprise-grade
-              security with data encryption both in transit and at rest.
+              Your account data, tasks, settings, push token, address fields, and
+              uploaded manuals are stored in Supabase (database and, for files,
+              Supabase Storage). Supabase provides security measures including
+              encryption in transit and at rest for data they host. See{" "}
+              <a
+                href="https://supabase.com/privacy"
+                className="text-teal-700 dark:text-teal-400 underline hover:no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Supabase&apos;s privacy policy
+              </a>
+              .
             </p>
 
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Data Location and Compliance
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Your data is stored in secure data centers and Supabase complies
-              with industry-standard security practices including SOC 2 Type II
-              compliance and GDPR requirements.
-            </p>
-
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Security Measures
+              Encryption and access
             </h3>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
-              <li>• End-to-end encryption for data transmission</li>
-              <li>• Secure authentication and access controls</li>
-              <li>• Regular security updates and monitoring</li>
-              <li>• Data backup and disaster recovery systems</li>
-              <li>• Industry-standard security protocols</li>
+              <li>
+                • Data is transmitted between the app and our servers using
+                encryption in transit (for example TLS/HTTPS). This is not the
+                same as end-to-end encryption where only you hold the keys; our
+                service providers process data as needed to provide the Services.
+              </li>
+              <li>• Secure authentication and access controls on your account.</li>
+              <li>• Industry-standard practices for hosting and backups.</li>
             </ul>
           </section>
 
@@ -132,41 +262,85 @@ export default function Privacy() {
               Notifications
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              HomeKeep uses iOS&apos;s notification system to remind you about
-              upcoming maintenance tasks. These notifications are generated
-              locally on your device based on your task schedules and
-              preferences.
+              HomeKeep may send reminders using your device&apos;s notification
+              system. Some reminders are delivered as{" "}
+              <strong>remote push notifications</strong>: a push token tied to
+              your device can be stored with your profile so our backend or
+              scheduled jobs can trigger notifications you have enabled (for
+              example due or summary reminders). Delivery may involve{" "}
+              <strong>Apple Push Notification service</strong> (iOS) or{" "}
+              <strong>Firebase Cloud Messaging</strong> (Android) as part of the
+              normal operation of your device platform.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              You can control notification permissions through your
-              device&apos;s Settings app and customize notification preferences
-              within HomeKeep.
+              You can control notification permissions in your device settings
+              and adjust notification preferences inside the app where
+              available.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Third-Party Services
+              Service providers (subprocessors)
             </h2>
-
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              Supabase Database Service
-            </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              HomeKeep uses Supabase as our cloud database service to store and
-              sync your data. Supabase is a reputable service provider that
-              maintains strict security and privacy standards. Your data is only
-              used to provide HomeKeep&apos;s functionality and is not shared
-              with other third parties.
+              We share personal information with vendors only as needed to
+              operate the Services. These include:
             </p>
-
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-              No Analytics or Advertising
-            </h3>
+            <ul className="text-gray-600 dark:text-gray-300 space-y-2 mb-4">
+              <li>
+                • <strong>Supabase</strong> — authentication, database, file
+                storage, and related infrastructure.
+              </li>
+              <li>
+                • <strong>Open-Meteo</strong> — geocoding and weather when you
+                use address or weather features.
+              </li>
+              <li>
+                • <strong>Mapbox</strong> — optional address search
+                suggestions when that feature is configured in the app.
+              </li>
+              <li>
+                • <strong>Apple</strong> — Sign in with Apple and push
+                delivery on Apple devices.
+              </li>
+              <li>
+                • <strong>Google</strong> — push delivery on Android devices
+                (Firebase Cloud Messaging), when you use the app on Android.
+              </li>
+              <li>
+                • <strong>Expo</strong> — push token registration and related
+                notification infrastructure used by the app.
+              </li>
+              <li>
+                • <strong>Vercel</strong> — hosting and analytics for
+                homekeep.app.
+              </li>
+              <li>
+                • <strong>Resend</strong> — delivering support emails when you
+                use the website contact form.
+              </li>
+            </ul>
             <p className="text-gray-600 dark:text-gray-300">
-              HomeKeep does not integrate with analytics platforms, advertising
-              networks, or marketing services. We do not track your usage
-              patterns or share your data for advertising purposes.
+              Each provider processes data under its own terms and privacy
+              policy. We do not authorize them to use your personal information
+              for their own marketing unrelated to providing their services to
+              us.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Analytics and advertising
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              The HomeKeep mobile app, as published, does not integrate
+              third-party in-app analytics or advertising SDKs for behavioral
+              tracking.
+            </p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Our marketing website uses Vercel Analytics for aggregate visit and
+              performance metrics, as described above.
             </p>
           </section>
 
@@ -188,30 +362,27 @@ export default function Privacy() {
               Your Rights
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              You have the following rights regarding your personal data:
+              Depending on where you live, you may have rights to access,
+              correct, delete, or port your personal data. In general you can:
             </p>
             <ul className="text-gray-600 dark:text-gray-300 space-y-2">
               <li>
-                • <strong>Access:</strong> View all your data within the app
+                • <strong>Access and modify:</strong> View and edit tasks,
+                settings, and profile information in the app.
               </li>
               <li>
-                • <strong>Modify:</strong> Edit or update any task or setting
+                • <strong>Delete content:</strong> Remove individual tasks or
+                other items you have created.
               </li>
               <li>
-                • <strong>Delete:</strong> Remove individual tasks or delete
-                your entire account and all associated data
+                • <strong>Delete your account:</strong> Use the account deletion
+                option in the app, when available, to request deletion of your
+                account and associated data processed through our backend. You
+                may also contact support for assistance.
               </li>
               <li>
                 • <strong>Export:</strong> Request a copy of your data by
-                contacting support
-              </li>
-              <li>
-                • <strong>Portability:</strong> Your data can be exported in a
-                standard format upon request
-              </li>
-              <li>
-                • <strong>Account Deletion:</strong> Contact support to
-                permanently delete your account and all data
+                contacting support; we will respond subject to applicable law.
               </li>
             </ul>
           </section>
@@ -226,8 +397,9 @@ export default function Privacy() {
               &quot;Last updated&quot; date at the top.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
-              Continued use of HomeKeep after any changes constitutes acceptance
-              of the updated Privacy Policy.
+              Continued use of the Services after any changes constitutes
+              acceptance of the updated Privacy Policy, to the extent permitted
+              by law.
             </p>
           </section>
 
@@ -237,8 +409,8 @@ export default function Privacy() {
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               If you have any questions about this Privacy Policy or
-              HomeKeep&apos;s privacy practices, please visit our support page
-              to get in touch.
+              HomeKeep&apos;s privacy practices, please visit our support page to
+              get in touch.
             </p>
             <div className="flex justify-center">
               <Link
@@ -252,7 +424,6 @@ export default function Privacy() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="flex justify-center mb-4">
