@@ -1,16 +1,50 @@
 @import "tailwindcss";
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom right, rgb(239 246 255), rgb(224 231 255));
-  scroll-behavior: smooth;
+/* HomeKeep design tokens — aligned with homekeep-mobile src/theme/colors.ts */
+:root {
+  --color-background: #f7f9fa;
+  --color-surface: #ffffff;
+  --color-text: #222222;
+  --color-text-secondary: #4a4a4a;
+  --color-primary: #2ec4b6;
+  --color-accent: #ff9f1c;
+  --color-border: #e0e0e0;
+  --glass-tint: rgba(46, 196, 182, 0.06);
+  --glass-stroke: rgba(255, 255, 255, 0.55);
+  --glass-fill: rgba(255, 255, 255, 0.7);
+  --glass-fill-strong: rgba(255, 255, 255, 0.85);
+  --shadow-ambient: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-key: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --ease-out-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 220ms;
+  --duration-base: 280ms;
 }
 
 @media (prefers-color-scheme: dark) {
-  html, body {
-    background: linear-gradient(to bottom right, rgb(17 24 39), rgb(31 41 55));
+  :root {
+    --color-background: #181a1b;
+    --color-surface: #232526;
+    --color-text: #f7f7f7;
+    --color-text-secondary: #b0b0b0;
+    --color-primary: #20b486;
+    --color-accent: #ff9f1c;
+    --color-border: #333333;
+    --glass-tint: rgba(46, 196, 182, 0.1);
+    --glass-stroke: rgba(255, 255, 255, 0.18);
+    --glass-fill: rgba(35, 37, 38, 0.7);
+    --glass-fill-strong: rgba(35, 37, 38, 0.85);
+    --shadow-ambient: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-key: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
 }
 
 /* Page transition animations */
@@ -29,85 +63,207 @@ html, body {
   animation: pageFadeIn 0.5s ease-out;
 }
 
-/* Glassmorphism utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-}
-
-.glass-hover {
-  transition: all 0.3s ease;
-}
-
-.glass-hover:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+/* Sticky nav — lighter frosted bar (more transparent than .glass / cards) */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(20px) saturate(1.08);
+  -webkit-backdrop-filter: blur(20px) saturate(1.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
-  .glass {
-    background: rgba(17, 24, 39, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .glass-card {
-    background: rgba(17, 24, 39, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  }
-  
-  .glass-hover:hover {
-    background: rgba(31, 41, 55, 0.9);
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  .glass-nav {
+    background: rgba(24, 26, 27, 0.36);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
 
-/* Animation utilities */
+/* Glass — mobile-aligned tint/stroke + soft layered shadow */
+.glass {
+  background: var(--glass-fill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-stroke);
+  box-shadow: var(--shadow-ambient), var(--shadow-key);
+}
+
+.glass-card {
+  background: var(--glass-fill);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-stroke);
+  box-shadow: var(--shadow-ambient), var(--shadow-key);
+}
+
+.glass-hover {
+  transition:
+    background var(--duration-base) var(--ease-out-standard),
+    box-shadow var(--duration-base) var(--ease-out-standard),
+    transform var(--duration-fast) var(--ease-out-standard);
+}
+
+.glass-hover:hover {
+  background: var(--glass-fill-strong);
+  box-shadow: var(--shadow-ambient), 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.glass-hover:active {
+  transform: scale(0.99);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-hover:hover {
+    box-shadow: var(--shadow-ambient), 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Icon chip — matches mobile feature row */
+.glass-icon-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: var(--glass-tint);
+  border: 1px solid var(--glass-stroke);
+  color: var(--color-primary);
+}
+
+/* Hero halo — single-hue teal (mobile useGradients haloGradient) */
+.hero-halo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 70% at 50% 28%,
+    rgba(46, 196, 182, 0.22) 0%,
+    rgba(46, 196, 182, 0.08) 42%,
+    transparent 72%
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-halo {
+    background: radial-gradient(
+      ellipse 85% 70% at 50% 28%,
+      rgba(46, 196, 182, 0.18) 0%,
+      rgba(46, 196, 182, 0.06) 42%,
+      transparent 72%
+    );
+  }
+}
+
+/* Hero motion — opacity-first, short duration */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeInDelayed {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-hero-group {
+  opacity: 0;
+  animation: heroFadeIn var(--duration-base) var(--ease-out-standard) forwards;
+}
+
+.animate-hero-delay-1 {
+  opacity: 0;
+  animation: heroFadeInDelayed var(--duration-base) var(--ease-out-standard) 80ms forwards;
+}
+
+.animate-hero-delay-2 {
+  opacity: 0;
+  animation: heroFadeInDelayed var(--duration-base) var(--ease-out-standard) 160ms forwards;
+}
+
+/* Animation utilities (legacy pages / navbar) */
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInHero {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes bounceIn {
-  0% { opacity: 0; transform: scale(0.3); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes scaleIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-fade-in {
@@ -145,7 +301,9 @@ html, body {
 .fade-on-scroll {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-on-scroll.visible {
@@ -156,7 +314,9 @@ html, body {
 .slide-up-on-scroll {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .slide-up-on-scroll.visible {
@@ -167,12 +327,31 @@ html, body {
 .scale-on-scroll {
   opacity: 0;
   transform: scale(0.95);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .scale-on-scroll.visible {
   opacity: 1;
   transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-on-scroll,
+  .slide-up-on-scroll,
+  .scale-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-hero-group,
+  .animate-hero-delay-1,
+  .animate-hero-delay-2 {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 /* Shimmer animation for skeleton loaders */
@@ -229,4 +408,16 @@ html, body {
 
 .animation-delay-1200 {
   animation-delay: 1200ms;
+}
+
+/* Native dialog — center + backdrop (feature modal) */
+dialog {
+  margin: auto;
+  border: none;
+  padding: 0;
+  max-height: min(90vh, 32rem);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
 }
