@@ -31,23 +31,27 @@ export default function Navbar() {
   const isHomePage = pathname === "/";
 
   return (
-    <nav className="glass sticky top-0 z-50 border-b border-white/20 animate-slide-in">
+    <nav className="glass-nav sticky top-0 z-50 animate-slide-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center space-x-2 group transition-transform duration-300 hover:scale-105"
+          <Link
+            href="/"
+            className="flex items-center space-x-2 group transition-opacity duration-200 hover:opacity-90"
           >
             <Image
               src="/homekeep-logo.png"
               alt="HomeKeep Logo"
               width={32}
               height={32}
-              className="rounded-lg border border-gray-100 dark:border-gray-600 transition-transform duration-300 group-hover:rotate-3"
+              className="rounded-lg border border-[var(--glass-stroke)]"
             />
-            <span className="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
-              {pageTitle || "HomeKeep"}
+            <span className="text-xl font-bold text-[var(--color-text)] transition-colors duration-200">
+              {pageTitle || (
+                <>
+                  Home<span className="text-[var(--color-accent)]">Keep</span>
+                </>
+              )}
             </span>
           </Link>
 
@@ -56,18 +60,18 @@ export default function Navbar() {
             {!isHomePage && (
               <Link
                 href="/"
-                className="text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 transition-all duration-300 font-medium hover:scale-105 relative group"
+                className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 font-medium relative group"
               >
                 Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-700 dark:bg-slate-300 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-200 group-hover:w-full" />
               </Link>
             )}
             <Link
               href="/support"
-              className="text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 transition-all duration-300 font-medium hover:scale-105 relative group"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 font-medium relative group"
             >
               Support
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-700 dark:bg-slate-300 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-200 group-hover:w-full" />
             </Link>
           </div>
 
@@ -75,11 +79,11 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-md p-2 transition-all duration-300 hover:scale-110"
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] rounded-md p-2 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-6 w-6 transition-transform duration-300"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -107,11 +111,11 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden animate-slide-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-white/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-[var(--glass-stroke)]">
               {!isHomePage && (
                 <Link
                   href="/"
-                  className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/10 dark:hover:bg-white/5 rounded-md transition-all duration-300 font-medium hover:translate-x-1"
+                  className="block px-3 py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--glass-tint)] rounded-md transition-colors duration-200 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
@@ -119,7 +123,7 @@ export default function Navbar() {
               )}
               <Link
                 href="/support"
-                className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-white/10 dark:hover:bg-white/5 rounded-md transition-all duration-300 font-medium hover:translate-x-1"
+                className="block px-3 py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--glass-tint)] rounded-md transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Support

@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email using Resend
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "HomeKeep Support <onboarding@resend.dev>", // Using Resend's verified domain
       to: [process.env.SUPPORT_EMAIL || "jeffreyvpatey@gmail.com"], // Your email from env variable
       subject: `HomeKeep Support: ${subject}`,
