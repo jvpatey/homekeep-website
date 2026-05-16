@@ -19,7 +19,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: May 11, 2026
+          Last updated: May 16, 2026
         </p>
       </header>
 
@@ -99,10 +99,18 @@ export default function Privacy() {
                 notifications you have opted into.
               </li>
               <li>
-                • <strong>Optional equipment manuals:</strong> PDF files and
-                related metadata you upload to your account; if you attach an
-                image, we process the image you select from your camera or photo
-                library solely for that upload.
+                • <strong>Optional equipment files:</strong> PDF or photo
+                manuals and purchase receipts, plus related metadata (such as
+                equipment name, model, and purchase date) you upload to your
+                account; if you attach an image, we process the image you select
+                from your camera or photo library solely for that upload.
+              </li>
+              <li>
+                • <strong>Home summary export:</strong> When you generate a
+                printable home summary, the app assembles a report from your
+                stored tasks, optional address, and equipment data, then creates
+                a PDF on your device. We do not upload that PDF to our servers
+                unless you save or share it outside the app.
               </li>
             </ul>
 
@@ -214,7 +222,10 @@ export default function Privacy() {
                 • Show optional dashboard features such as weather when you have
                 saved location information.
               </li>
-              <li>• Store optional manuals and attachments you upload.</li>
+              <li>
+                • Store optional equipment manuals, receipts, and related
+                attachments you upload.
+              </li>
               <li>
                 • Respond to support requests and improve reliability and
                 security.
@@ -236,7 +247,8 @@ export default function Privacy() {
             </h3>
             <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
               Your account data, tasks, settings, push token, address fields, and
-              uploaded manuals are stored in Supabase (database and, for files,
+              uploaded equipment manuals and receipts are stored in Supabase
+              (database and, for files,
               Supabase Storage). Supabase provides security measures including
               encryption in transit and at rest for data they host. See{" "}
               <a

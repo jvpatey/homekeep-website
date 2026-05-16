@@ -19,7 +19,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: May 11, 2026
+          Last updated: May 16, 2026
         </p>
       </header>
 
@@ -65,7 +65,12 @@ export default function Terms() {
                 • Optional home address and a weather summary on the dashboard
               </li>
               <li>
-                • Optional equipment manuals (for example PDF storage and viewing)
+                • Optional equipment library (manuals and purchase receipts as
+                PDF or photo, with in-app viewing)
+              </li>
+              <li>
+                • A printable home maintenance summary (PDF assembled on your
+                device from your tasks, address, and equipment)
               </li>
               <li>
                 • Multiple maintenance categories (such as HVAC, Plumbing,
