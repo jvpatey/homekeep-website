@@ -54,6 +54,10 @@ const FEATURES = [
 
 const CHECKLIST = [
   {
+    title: "Printable Home Summary",
+    body: "Export a PDF with your address, equipment, and full completion history—handy for insurance, listings, or your records.",
+  },
+  {
     title: "Recurring Task Schedules",
     body: "Customizable intervals from daily to yearly",
   },
@@ -79,8 +83,8 @@ const CHECKLIST = [
   },
 ] as const;
 
-/** lg grid column spans for bento rhythm (6-col subgrid) */
-const BENTO_SPANS = [
+/** lg grid column spans for bento rhythm (6-col subgrid); index 0 is full-width */
+const BENTO_TILE_SPANS = [
   "lg:col-span-3",
   "lg:col-span-3",
   "lg:col-span-4",
@@ -88,6 +92,11 @@ const BENTO_SPANS = [
   "lg:col-span-2",
   "lg:col-span-4",
 ] as const;
+
+function getBentoSpan(index: number): string {
+  if (index === 0) return "lg:col-span-6";
+  return BENTO_TILE_SPANS[index - 1];
+}
 
 export default function Home() {
   const [modalFeatureIndex, setModalFeatureIndex] = useState<number | null>(
@@ -287,9 +296,6 @@ export default function Home() {
                   <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
                     At a glance
                   </p>
-                  <p className="mt-1 text-sm text-[var(--color-text-secondary)] leading-snug">
-                    Tap a row for more detail.
-                  </p>
                 </div>
                 <div className="flex-1 flex flex-col">
                   {FEATURES.map((feature, index) => (
@@ -350,7 +356,7 @@ export default function Home() {
               {CHECKLIST.map((item, i) => (
                 <div
                   key={item.title}
-                  className={`glass-card rounded-2xl p-5 md:p-6 flex flex-col h-full min-h-[140px] transition-[transform,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-0.5 ${BENTO_SPANS[i]}`}
+                  className={`glass-card rounded-2xl p-5 md:p-6 flex flex-col h-full min-h-[140px] transition-[transform,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-0.5 ${getBentoSpan(i)}`}
                   style={{ transitionDelay: `${40 + i * 35}ms` }}
                 >
                   <svg
