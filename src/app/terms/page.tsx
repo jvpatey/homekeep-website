@@ -5,9 +5,15 @@ import Footer from "@/app/components/Footer";
 import Reveal from "@/app/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - HomeKeep",
+  title: "Terms of Service",
   description:
     "Read the terms of service for using HomeKeep. Learn about your rights and responsibilities when using our home maintenance tracking app.",
+  openGraph: {
+    title: "Terms of Service — HomeKeep",
+    description:
+      "Read the terms of service for using HomeKeep, including HomeKeep + and household sharing.",
+    url: "https://homekeep.app/terms",
+  },
 };
 
 export default function Terms() {
@@ -24,7 +30,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: May 16, 2026
+          Last updated: September 5, 2026
         </p>
       </Reveal>
 
@@ -60,18 +66,26 @@ export default function Terms() {
               <li>• Task creation, editing, completion, and history</li>
               <li>• Recurring tasks and maintenance routines</li>
               <li>
-                • Guided maintenance plans (for example seasonal or starter plans)
+                • Guided maintenance plans and home-system selections (for
+                example seasonal or starter plans)
               </li>
               <li>
-                • Reminders via push notifications and device notifications, based
-                on your preferences
+                • Reminders via push notifications and device notifications,
+                based on your preferences
               </li>
               <li>
                 • Optional home address and a weather summary on the dashboard
               </li>
               <li>
+                • Optional emergency facts for this home (for example shutoff
+                locations, with notes or photos)
+              </li>
+              <li>
                 • Optional equipment library (manuals and purchase receipts as
                 PDF or photo, with in-app viewing)
+              </li>
+              <li>
+                • A shared household: invite others to one home and one plan
               </li>
               <li>
                 • A printable home maintenance summary (PDF assembled on your
@@ -82,6 +96,10 @@ export default function Terms() {
                 Electrical, and related groupings)
               </li>
               <li>• Sync of your data across devices when you sign in</li>
+              <li>
+                • HomeKeep +, a subscription required after a 7-day free trial
+                to keep using core features
+              </li>
             </ul>
             <p className="text-[var(--color-text-secondary)] leading-relaxed mt-4">
               The Site provides information about HomeKeep, links to app stores,
@@ -148,6 +166,54 @@ export default function Terms() {
               the Privacy Policy) to operate the Services. Those providers
               process personal information only as needed to provide their
               services to us. We do not sell your personal information.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              HomeKeep +
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              HomeKeep + is the subscription for the App. You start with a
+              7-day free trial. After the trial, HomeKeep + is required to
+              complete tasks, receive scheduled reminders, share a household,
+              export a home summary, and make most edits. Without an active
+              subscription, some information may remain viewable only.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              Subscriptions are sold through the App Store, not on this
+              website. Payment is charged to your Apple ID. The subscription
+              renews automatically at the selected price until you cancel.
+              Manage or cancel anytime in your App Store account settings.
+              Restoring purchases is available in the App.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              Current plans include yearly and monthly options. Prices shown on
+              this site are in CAD and may vary by region; the App Store shows
+              the price that applies to you. A subscription purchased for a
+              household applies to people currently in that household.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Deleting the App or your HomeKeep account does not automatically
+              cancel HomeKeep +. You must cancel in your App Store account
+              settings to stop renewal.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Household sharing
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              You may invite others to one home with an invite code. Members
+              share that home&apos;s schedule and equipment. The household
+              owner controls the home address, systems, and emergency facts.
+              You are responsible for who you invite and for content you add to
+              a shared home.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Do not share invite codes with people you do not want to see this
+              home&apos;s plan, address, or emergency information.
             </p>
           </section>
 
@@ -263,10 +329,10 @@ export default function Terms() {
             </p>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               Upon termination, your license to use the App ends. You may delete
-              your account and associated data through the App where that
-              feature is offered, or contact support for assistance. Retention of
-              certain records may apply as described in our Privacy Policy or as
-              required by law.
+              your account through Settings in the App, or contact support for
+              assistance. Cancelling HomeKeep + is separate and must be done in
+              your App Store account settings. Retention of certain records may
+              apply as described in our Privacy Policy or as required by law.
             </p>
           </section>
 

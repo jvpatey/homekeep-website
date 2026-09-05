@@ -4,9 +4,15 @@ import Footer from "@/app/components/Footer";
 import Reveal from "@/app/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - HomeKeep",
+  title: "Privacy Policy",
   description:
     "Learn about how HomeKeep protects your privacy and handles your data. We're committed to keeping your home maintenance data secure and private.",
+  openGraph: {
+    title: "Privacy Policy — HomeKeep",
+    description:
+      "Learn about how HomeKeep protects your privacy and handles your data.",
+    url: "https://homekeep.app/privacy",
+  },
 };
 
 export default function Privacy() {
@@ -23,7 +29,7 @@ export default function Privacy() {
           Privacy Policy
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: May 16, 2026
+          Last updated: September 5, 2026
         </p>
       </Reveal>
 
@@ -42,11 +48,12 @@ export default function Privacy() {
             </p>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               <strong>Simple summary:</strong> We use service providers such as
-              Supabase to host your account and app data. We do not sell your
-              personal information. We use additional providers only where needed
-              to operate specific features (for example weather, optional address
-              search, push notifications, or our support form and website
-              analytics), as described below.
+              Supabase to host your account and app data, and RevenueCat with
+              the App Store to manage HomeKeep + subscriptions. We do not sell
+              your personal information. We use additional providers only where
+              needed to operate specific features (for example weather, optional
+              address search, push notifications, household sharing, or our
+              support form and website analytics), as described below.
             </p>
           </section>
 
@@ -79,18 +86,20 @@ export default function Privacy() {
               <li>
                 • <strong>Tasks and maintenance data:</strong> Task names,
                 descriptions, due dates, priorities, categories, completion
-                status, recurring rules, and related maintenance information.
+                status, recurring rules, notes, optional cost or labor type,
+                optional completion photos, and who marked an item complete.
               </li>
               <li>
-                • <strong>Guided plans and routines:</strong> Data you generate
-                when using seasonal or guided maintenance plans (for example
-                questionnaire answers and applied routines).
+                • <strong>Guided plans and home systems:</strong> Data you
+                generate when using seasonal or guided maintenance plans (for
+                example questionnaire answers, applied routines, and home-system
+                or zone selections).
               </li>
               <li>
                 • <strong>Profile and settings:</strong> Display name and
-                profile fields stored with your account; notification
-                preferences; app customization; device timezone saved to help
-                schedule reminders accurately.
+                profile fields stored with your account; optional profile photo
+                or avatar style; notification preferences; app customization;
+                device timezone saved to help schedule reminders accurately.
               </li>
               <li>
                 • <strong>Optional home address:</strong> Address fields and
@@ -98,9 +107,22 @@ export default function Privacy() {
                 (see Location and address below).
               </li>
               <li>
+                • <strong>Emergency facts:</strong> Optional notes and photos
+                you save for this home (for example water shutoff, breaker
+                panel, or gas shutoff) so they are easy to find later.
+              </li>
+              <li>
+                • <strong>Household sharing:</strong> If you create or join a
+                shared household, we store membership, roles (owner or member),
+                and an invite code. Members can see the shared schedule, home
+                details the owner has saved, equipment, and other members&apos;
+                names, emails, and profile photos.
+              </li>
+              <li>
                 • <strong>Push notifications:</strong> A push token associated
                 with your device may be stored so we can send reminder
-                notifications you have opted into.
+                notifications you have opted into, including household events
+                such as someone joining or leaving.
               </li>
               <li>
                 • <strong>Optional equipment files:</strong> PDF or photo
@@ -108,6 +130,12 @@ export default function Privacy() {
                 equipment name, model, and purchase date) you upload to your
                 account; if you attach an image, we process the image you select
                 from your camera or photo library solely for that upload.
+              </li>
+              <li>
+                • <strong>HomeKeep +:</strong> Subscription status (for example
+                trial, active, or expired), product identifiers, and related
+                dates so we can unlock the app after the free trial and share
+                access with your current household.
               </li>
               <li>
                 • <strong>Home summary export:</strong> When you generate a
@@ -220,15 +248,23 @@ export default function Privacy() {
               </li>
               <li>
                 • Send push or local notifications according to your preferences
-                and schedules.
+                and schedules, including household events you have enabled.
               </li>
               <li>
                 • Show optional dashboard features such as weather when you have
                 saved location information.
               </li>
               <li>
-                • Store optional equipment manuals, receipts, and related
-                attachments you upload.
+                • Store optional equipment manuals, receipts, emergency facts,
+                completion photos, and related attachments you upload.
+              </li>
+              <li>
+                • Let you share one home and schedule with people you invite,
+                and apply a HomeKeep + subscription to that household.
+              </li>
+              <li>
+                • Process HomeKeep + purchases and restore subscription access
+                through the App Store and RevenueCat.
               </li>
               <li>
                 • Respond to support requests and improve reliability and
@@ -250,9 +286,10 @@ export default function Privacy() {
               Cloud storage with Supabase
             </h3>
             <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
-              Your account data, tasks, settings, push token, address fields, and
-              uploaded equipment manuals and receipts are stored in Supabase
-              (database and, for files,
+              Your account data, tasks, settings, household membership, HomeKeep
+              + entitlement status, push token, address fields, emergency facts,
+              profile photos, and uploaded equipment manuals, receipts, and
+              completion photos are stored in Supabase (database and, for files,
               Supabase Storage). Supabase provides security measures including
               encryption in transit and at rest for data they host. See{" "}
               <a
@@ -298,7 +335,58 @@ export default function Privacy() {
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               You can control notification permissions in your device settings
               and adjust notification preferences inside the app where
-              available.
+              available. Scheduled reminder notifications are part of HomeKeep +
+              after the free trial.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              HomeKeep + and purchases
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              After a 7-day free trial, a HomeKeep + subscription is required to
+              keep using core features such as completing tasks, reminders,
+              sharing a household, and most edits. Without an active
+              subscription you may still be able to view some information in
+              the app.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              Purchases are processed by Apple through the App Store. We use{" "}
+              <a
+                href="https://www.revenuecat.com/privacy"
+                className="text-[var(--color-primary)] underline underline-offset-2 hover:opacity-80 transition-opacity"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                RevenueCat
+              </a>{" "}
+              to recognize your subscription, restore purchases, and apply
+              access to your current household. We do not receive your full
+              payment card number. Apple charges your Apple ID; you manage or
+              cancel in your App Store account settings.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Prices shown on our website are in CAD and may vary by region.
+              The price you pay is the one shown in the App Store at checkout.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Household sharing
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
+              HomeKeep is organized around one home. If you invite others, they
+              join that household with a short invite code. The household owner
+              is the source of truth for the home address, systems, and
+              emergency facts. Members can work the shared schedule and see
+              shared equipment, but they cannot change those owner home fields.
+            </p>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              A HomeKeep + subscription purchased for a household applies to
+              people currently in that household. If you leave a household, you
+              stop seeing that home&apos;s shared plan.
             </p>
           </section>
 
@@ -324,8 +412,13 @@ export default function Privacy() {
                 suggestions when that feature is configured in the app.
               </li>
               <li>
-                • <strong>Apple</strong> — Sign in with Apple and push
-                delivery on Apple devices (Apple Push Notification service).
+                • <strong>Apple</strong> — Sign in with Apple, App Store
+                billing for HomeKeep +, and push delivery on Apple devices
+                (Apple Push Notification service).
+              </li>
+              <li>
+                • <strong>RevenueCat</strong> — subscription status,
+                entitlements, and restore-purchase support for HomeKeep +.
               </li>
               <li>
                 • <strong>Expo</strong> — push token registration and related
@@ -394,10 +487,13 @@ export default function Privacy() {
                 other items you have created.
               </li>
               <li>
-                • <strong>Delete your account:</strong> Use the account deletion
-                option in the app, when available, to request deletion of your
-                account and associated data processed through our backend. You
-                may also contact support for assistance.
+                • <strong>Delete your account:</strong> Use Delete account in
+                Settings to remove your login, profile, tasks, notification
+                data, and profile photos. Equipment files, household records, or
+                subscription records may need extra cleanup. Contact support if
+                you want us to confirm that related data has been removed.
+                Cancelling HomeKeep + is done in your App Store account
+                settings and is separate from deleting your HomeKeep account.
               </li>
               <li>
                 • <strong>Export:</strong> Request a copy of your data by

@@ -6,9 +6,15 @@ import HoverLift from "@/app/components/HoverLift";
 import Reveal from "@/app/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Support — HomeKeep",
+  title: "Support",
   description:
     "Get help with HomeKeep. Find answers to frequently asked questions, troubleshooting tips, and contact our support team.",
+  openGraph: {
+    title: "Support — HomeKeep",
+    description:
+      "Get help with HomeKeep. Find answers to frequently asked questions, troubleshooting tips, and contact our support team.",
+    url: "https://homekeep.app/support",
+  },
 };
 
 export default function Support() {
@@ -62,7 +68,7 @@ export default function Support() {
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
                     Version
                   </dt>
-                  <dd className="text-sm text-[var(--color-text)]">1.3.0</dd>
+                  <dd className="text-sm text-[var(--color-text)]">1.3.1</dd>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 py-3">
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">

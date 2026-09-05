@@ -13,7 +13,10 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://homekeep.app"),
-  title: "HomeKeep — Home maintenance, handled.",
+  title: {
+    default: "HomeKeep — Home maintenance, handled.",
+    template: "%s — HomeKeep",
+  },
   description:
     "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
   keywords:
@@ -21,35 +24,33 @@ export const metadata: Metadata = {
   authors: [{ name: "HomeKeep" }],
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico?v=hearth", sizes: "any" },
+      { url: "/favicon-16x16.png?v=hearth", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=hearth", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png?v=hearth",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon.ico?v=hearth",
   },
   openGraph: {
     title: "HomeKeep — Home maintenance, handled.",
     description:
       "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
     type: "website",
-    images: [
-      {
-        url: "/homekeep-logo.png",
-        width: 1024,
-        height: 1024,
-        alt: "HomeKeep",
-      },
-    ],
+    locale: "en_CA",
+    siteName: "HomeKeep",
+    url: "https://homekeep.app",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "HomeKeep — Home maintenance, handled.",
     description:
       "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
-    images: ["/homekeep-logo.png"],
   },
 };
 
