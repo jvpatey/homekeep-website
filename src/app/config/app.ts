@@ -5,7 +5,7 @@ export const APP_CONFIG = {
 
   // App details
   name: "HomeKeep",
-  description: "Never forget home maintenance again!",
+  description: "Home maintenance, handled.",
 
   // Social links (if you have them)
   social: {

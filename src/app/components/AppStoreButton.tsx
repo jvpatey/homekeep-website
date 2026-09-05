@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { tapPress } from "../lib/motion";
 
 interface AppStoreButtonProps {
   href: string;
@@ -15,38 +16,37 @@ export default function AppStoreButton({
   variant = "primary",
   showIcon = true,
 }: AppStoreButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
+  const reduce = useReducedMotion();
   const baseClasses =
-    "relative inline-flex items-center justify-center overflow-hidden px-6 py-3 rounded-xl font-semibold text-lg transition-[filter,transform,box-shadow] duration-200 ease-out active:scale-[0.98]";
+    "relative inline-flex items-center justify-center overflow-hidden px-7 min-h-14 rounded-2xl font-semibold text-base";
 
   const variantClasses = {
-    primary:
-      "bg-[var(--color-primary)] text-white shadow-md hover:brightness-[1.06]",
+    primary: "bg-[var(--color-primary)] text-white shadow-[var(--shadow-key)]",
     secondary:
-      "bg-white text-slate-800 hover:bg-gray-50 border-2 border-white/90 shadow-md dark:text-slate-900",
+      "bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] shadow-[var(--shadow-ambient)]",
   };
 
   return (
-    <a
+    <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      whileHover={
+        reduce
+          ? undefined
+          : {
+              y: -2,
+              filter: variant === "primary" ? "brightness(1.06)" : undefined,
+              backgroundColor:
+                variant === "secondary" ? "var(--color-field)" : undefined,
+            }
+      }
+      whileTap={reduce ? undefined : tapPress}
     >
-      {variant === "primary" ? (
-        <span
-          className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-b from-white/[0.18] to-transparent"
-          aria-hidden
-        />
-      ) : null}
       {showIcon && (
         <svg
-          className={`relative z-[1] w-6 h-6 mr-2 transition-transform duration-200 ease-out ${
-            isHovered ? "scale-105" : ""
-          }`}
+          className="relative z-[1] w-6 h-6 mr-2"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden
@@ -55,6 +55,6 @@ export default function AppStoreButton({
         </svg>
       )}
       <span className="relative z-[1]">Download on the App Store</span>
-    </a>
+    </motion.a>
   );
 }

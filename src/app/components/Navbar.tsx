@@ -1,92 +1,101 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { Wordmark } from "./HouseMark";
+import { APP_CONFIG } from "../config/app";
+import { duration, easeOutStandard, tapPress } from "../lib/motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const reduce = useReducedMotion();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isMenuOpen]);
 
-  // Get page title based on pathname
-  const getPageTitle = () => {
-    switch (pathname) {
-      case "/support":
-        return "Support";
-      case "/privacy":
-        return "Privacy Policy";
-      case "/terms":
-        return "Terms of Service";
-      default:
-        return null;
-    }
-  };
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
-  const pageTitle = getPageTitle();
   const isHomePage = pathname === "/";
+  const isSupport = pathname === "/support";
+
+  const navItems = [
+    !isHomePage ? { href: "/", label: "Home", id: "home" } : null,
+    isHomePage ? { href: "#pricing", label: "Pricing", id: "pricing" } : null,
+    { href: "/support", label: "Support", id: "support" },
+  ].filter(Boolean) as { href: string; label: string; id: string }[];
 
   return (
-    <nav className="glass-nav sticky top-0 z-50 animate-slide-in">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="glass-nav sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 group transition-opacity duration-200 hover:opacity-90"
+            className="inline-flex items-end transition-opacity duration-200 hover:opacity-80"
           >
-            <Image
-              src="/homekeep-logo.png"
-              alt="HomeKeep Logo"
-              width={32}
-              height={32}
-              className="rounded-lg border border-[var(--glass-stroke)]"
-            />
-            <span className="text-xl font-bold text-[var(--color-text)] transition-colors duration-200">
-              {pageTitle || (
-                <>
-                  Home<span className="text-[var(--color-accent)]">Keep</span>
-                </>
-              )}
-            </span>
+            <Wordmark markSize={28} />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {!isHomePage && (
-              <Link
-                href="/"
-                className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 font-medium relative group"
-              >
-                Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-200 group-hover:w-full" />
-              </Link>
-            )}
-            <Link
-              href="/support"
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200 font-medium relative group"
+          <div className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => {
+              const active =
+                (item.id === "support" && isSupport) ||
+                (item.id === "home" && pathname === "/");
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="relative min-h-11 inline-flex items-center font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition-colors duration-200"
+                >
+                  {item.label}
+                  {active && !reduce ? (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute bottom-2 left-0 right-0 h-0.5 rounded-full bg-[var(--color-primary)]"
+                      transition={{ duration: duration.fast, ease: easeOutStandard }}
+                    />
+                  ) : active ? (
+                    <span className="absolute bottom-2 left-0 right-0 h-0.5 rounded-full bg-[var(--color-primary)]" />
+                  ) : null}
+                </Link>
+              );
+            })}
+            <motion.a
+              href={APP_CONFIG.appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center min-h-11 px-4 rounded-full bg-[var(--color-primary)] text-white text-sm font-semibold shadow-[var(--shadow-key)]"
+              whileHover={reduce ? undefined : { y: -2, filter: "brightness(1.06)" }}
+              whileTap={reduce ? undefined : tapPress}
             >
-              Support
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-200 group-hover:w-full" />
-            </Link>
+              Get the app
+            </motion.a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={toggleMenu}
-              className="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] rounded-md p-2 transition-colors duration-200"
-              aria-label="Toggle menu"
+              type="button"
+              onClick={() => setIsMenuOpen((open) => !open)}
+              className="text-[var(--color-text-secondary)] hover:text-[var(--color-text)] rounded-md p-2 min-h-11 min-w-11 inline-flex items-center justify-center"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
               <svg
                 className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                aria-hidden
               >
                 {isMenuOpen ? (
                   <path
@@ -108,29 +117,38 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden animate-slide-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-[var(--glass-stroke)]">
-              {!isHomePage && (
-                <Link
-                  href="/"
-                  className="block px-3 py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--glass-tint)] rounded-md transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="md:hidden overflow-hidden"
+              initial={reduce ? false : { height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={reduce ? undefined : { height: 0, opacity: 0 }}
+              transition={{ duration: duration.base, ease: easeOutStandard }}
+            >
+              <div className="px-2 pt-2 pb-4 space-y-1 border-t border-[var(--color-border)]">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="block px-3 py-3 min-h-11 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--glass-tint)] rounded-xl font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <a
+                  href={APP_CONFIG.appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block mx-3 mt-2 text-center py-3 min-h-11 rounded-full bg-[var(--color-primary)] text-white font-semibold"
                 >
-                  Home
-                </Link>
-              )}
-              <Link
-                href="/support"
-                className="block px-3 py-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--glass-tint)] rounded-md transition-colors duration-200 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Support
-              </Link>
-            </div>
-          </div>
-        )}
+                  Get the app
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

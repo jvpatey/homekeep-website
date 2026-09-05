@@ -1,6 +1,8 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
+import { tapPress, transitionBase } from "../lib/motion";
 
 interface FormData {
   name: string;
@@ -15,9 +17,10 @@ interface FormStatus {
 }
 
 const fieldClass =
-  "w-full px-3 py-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] placeholder:text-[var(--color-text-secondary)]/70 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] disabled:opacity-50 disabled:cursor-not-allowed";
+  "w-full px-4 py-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] text-[var(--color-text)] placeholder:text-[var(--color-text-secondary)]/70 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] disabled:opacity-50 disabled:cursor-not-allowed";
 
 export default function ContactForm() {
+  const reduce = useReducedMotion();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -75,39 +78,45 @@ export default function ContactForm() {
 
   return (
     <div>
-      {status.type === "success" && (
-        <div
-          className="mb-4 p-4 rounded-xl border border-emerald-500/35 bg-emerald-500/10 dark:bg-emerald-500/15 dark:border-emerald-400/30"
-          role="status"
-        >
-          <div className="flex items-start gap-2">
-            <svg
-              className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              aria-hidden
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <p className="text-sm font-medium text-emerald-900 dark:text-emerald-100">
-              {status.message}
-            </p>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {status.type === "success" && (
+          <motion.div
+            className="mb-4 p-4 rounded-2xl border border-[var(--color-success)]/35 bg-[var(--color-success)]/10"
+            role="status"
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? { opacity: 1 } : { opacity: 0 }}
+            transition={transitionBase}
+          >
+            <div className="flex items-start gap-2">
+              <svg
+                className="w-5 h-5 text-[var(--color-success)] shrink-0 mt-0.5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-sm font-medium text-[var(--color-text)]">
+                {status.message}
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {status.type === "error" && (
         <div
-          className="mb-4 p-4 rounded-xl border border-red-500/35 bg-red-500/10 dark:bg-red-500/15 dark:border-red-400/30"
+          className="mb-4 p-4 rounded-2xl border border-[var(--color-error)]/35 bg-[var(--color-error)]/10"
           role="alert"
         >
           <div className="flex items-start gap-2">
             <svg
-              className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5"
+              className="w-5 h-5 text-[var(--color-error)] shrink-0 mt-0.5"
               fill="currentColor"
               viewBox="0 0 20 20"
               aria-hidden
@@ -118,7 +127,7 @@ export default function ContactForm() {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm font-medium text-red-900 dark:text-red-100">
+            <p className="text-sm font-medium text-[var(--color-text)]">
               {status.message}
             </p>
           </div>
@@ -213,10 +222,18 @@ export default function ContactForm() {
           />
         </div>
 
-        <button
+        <motion.button
           type="submit"
           disabled={status.type === "loading"}
-          className="w-full bg-[var(--color-primary)] text-white py-3 px-4 rounded-xl font-semibold transition-[filter,transform] duration-200 hover:brightness-105 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md"
+          whileHover={
+            reduce || status.type === "loading"
+              ? undefined
+              : { y: -2, filter: "brightness(1.06)" }
+          }
+          whileTap={
+            reduce || status.type === "loading" ? undefined : tapPress
+          }
+          className="w-full min-h-14 bg-[var(--color-primary)] text-white py-3 px-4 rounded-2xl font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-[var(--shadow-key)]"
         >
           {status.type === "loading" ? (
             <>
@@ -246,7 +263,7 @@ export default function ContactForm() {
           ) : (
             "Send message"
           )}
-        </button>
+        </motion.button>
       </form>
 
       <div className="mt-4 flex items-start gap-2 text-sm text-[var(--color-text-secondary)]">
