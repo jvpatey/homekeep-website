@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import ContactForm from "@/app/support/ContactForm";
+import FaqItem from "@/app/components/FaqItem";
 import Footer from "@/app/components/Footer";
+import HoverLift from "@/app/components/HoverLift";
+import Reveal from "@/app/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Support — HomeKeep",
@@ -9,46 +11,13 @@ export const metadata: Metadata = {
     "Get help with HomeKeep. Find answers to frequently asked questions, troubleshooting tips, and contact our support team.",
 };
 
-function DetailBlock({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
-  return (
-    <details className="group border-b border-[var(--color-border)] last:border-b-0 open:bg-[var(--glass-tint)] rounded-lg px-1 -mx-1 transition-colors">
-      <summary className="cursor-pointer list-none py-4 pr-2 text-[var(--color-text)] font-medium leading-snug select-none marker:hidden [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3 min-h-11">
-        <span>{title}</span>
-        <svg
-          className="shrink-0 w-4 h-4 text-[var(--color-secondary)] transition-transform duration-200 group-open:rotate-180"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </summary>
-      <div className="pb-4 pl-0.5 text-sm text-[var(--color-text-secondary)] leading-relaxed">
-        {children}
-      </div>
-    </details>
-  );
-}
-
 export default function Support() {
   return (
     <div
       id="main"
       className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]"
     >
-      <header className="max-w-6xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-10">
+      <Reveal as="header" className="max-w-6xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-10">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] mb-2">
           Help
         </p>
@@ -59,11 +28,13 @@ export default function Support() {
           Search common questions, try quick fixes, or send us a message—we
           typically reply within 24 hours.
         </p>
-      </header>
+      </Reveal>
 
       <main className="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
+        <Reveal className="mb-10 md:mb-12">
+        <HoverLift press={false}>
         <section
-          className="hearth-card rounded-[22px] p-6 md:p-8 mb-10 md:mb-12"
+          className="hearth-card rounded-[22px] p-6 md:p-8"
           aria-labelledby="contact-heading"
         >
           <h2
@@ -113,9 +84,13 @@ export default function Support() {
             </aside>
           </div>
         </section>
+        </HoverLift>
+        </Reveal>
 
+        <Reveal className="mb-10 md:mb-12">
+        <HoverLift press={false}>
         <section
-          className="hearth-card rounded-[22px] p-6 md:p-8 mb-10 md:mb-12"
+          className="hearth-card rounded-[22px] p-6 md:p-8"
           aria-labelledby="faq-heading"
         >
           <h2
@@ -134,27 +109,27 @@ export default function Support() {
                 Tasks &amp; schedules
               </h3>
               <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
-                <DetailBlock title="How do I create a recurring task?">
+                <FaqItem title="How do I create a recurring task?">
                   <p className="pt-3">
                     Tap the &quot;+&quot; button, fill in your task details, then
                     select your desired interval from daily to yearly. HomeKeep
                     will automatically create reminders based on your schedule.
                   </p>
-                </DetailBlock>
-                <DetailBlock title="How do I delete a task?">
+                </FaqItem>
+                <FaqItem title="How do I delete a task?">
                   <p className="pt-3">
                     To delete individual tasks: Go to Profile Menu → Total
                     Tasks, then tap the garbage icon next to any task. To delete
                     all tasks: Go to Profile Menu → Settings → Delete All Tasks.
                   </p>
-                </DetailBlock>
-                <DetailBlock title="What categories are available?">
+                </FaqItem>
+                <FaqItem title="What categories are available?">
                   <p className="pt-3">
                     HomeKeep includes 9 comprehensive categories: HVAC,
                     Plumbing, Electrical, Appliances, Exterior, Interior,
                     Landscaping, Safety, and General maintenance tasks.
                   </p>
-                </DetailBlock>
+                </FaqItem>
               </div>
             </div>
 
@@ -163,22 +138,22 @@ export default function Support() {
                 Notifications &amp; data
               </h3>
               <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
-                <DetailBlock title="How do notifications work?">
+                <FaqItem title="How do notifications work?">
                   <p className="pt-3">
                     HomeKeep sends you reminders based on your task schedules
                     and due dates. You can enable or disable notifications for
                     different categories in Settings → Notification Preferences
                     to control which types of tasks send you alerts.
                   </p>
-                </DetailBlock>
-                <DetailBlock title="Is my data backed up?">
+                </FaqItem>
+                <FaqItem title="Is my data backed up?">
                   <p className="pt-3">
                     Yes. Your tasks and settings are securely stored in the
                     cloud using Supabase, so your data is automatically backed
                     up and synced across your devices. You won&apos;t lose your
                     data when you upgrade or restore your device.
                   </p>
-                </DetailBlock>
+                </FaqItem>
               </div>
             </div>
 
@@ -187,18 +162,22 @@ export default function Support() {
                 Feedback
               </h3>
               <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
-                <DetailBlock title="How do I report a bug or request a feature?">
+                <FaqItem title="How do I report a bug or request a feature?">
                   <p className="pt-3">
                     Please use the contact form with details about the issue or
                     your feature request. We read every message and use your
                     feedback to improve HomeKeep.
                   </p>
-                </DetailBlock>
+                </FaqItem>
               </div>
             </div>
           </div>
         </section>
+        </HoverLift>
+        </Reveal>
 
+        <Reveal>
+        <HoverLift press={false}>
         <section
           className="hearth-card rounded-[22px] p-6 md:p-8"
           aria-labelledby="troubleshoot-heading"
@@ -215,7 +194,7 @@ export default function Support() {
           </p>
 
           <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
-            <DetailBlock title="Notifications not working">
+            <FaqItem title="Notifications not working">
               <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>
                   Check that notifications are enabled in Settings →
@@ -227,8 +206,8 @@ export default function Support() {
                 <li>Ensure Do Not Disturb is not blocking notifications</li>
                 <li>Try restarting the app</li>
               </ul>
-            </DetailBlock>
-            <DetailBlock title="App crashes or feels slow">
+            </FaqItem>
+            <FaqItem title="App crashes or feels slow">
               <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>Force close and restart the app</li>
                 <li>Restart your device</li>
@@ -238,8 +217,8 @@ export default function Support() {
                   iOS version
                 </li>
               </ul>
-            </DetailBlock>
-            <DetailBlock title="Tasks not appearing">
+            </FaqItem>
+            <FaqItem title="Tasks not appearing">
               <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>Pull down on the task list to refresh</li>
                 <li>
@@ -252,9 +231,11 @@ export default function Support() {
                   Try switching between different views (Upcoming, All Tasks)
                 </li>
               </ul>
-            </DetailBlock>
+            </FaqItem>
           </div>
         </section>
+        </HoverLift>
+        </Reveal>
       </main>
 
       <Footer current="support" />

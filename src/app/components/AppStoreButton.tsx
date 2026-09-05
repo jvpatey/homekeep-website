@@ -1,5 +1,8 @@
 "use client";
 
+import { motion, useReducedMotion } from "motion/react";
+import { tapPress } from "../lib/motion";
+
 interface AppStoreButtonProps {
   href: string;
   className?: string;
@@ -13,22 +16,33 @@ export default function AppStoreButton({
   variant = "primary",
   showIcon = true,
 }: AppStoreButtonProps) {
+  const reduce = useReducedMotion();
   const baseClasses =
-    "relative inline-flex items-center justify-center overflow-hidden px-7 min-h-14 rounded-2xl font-semibold text-base transition-[filter,transform,box-shadow] duration-200 ease-out active:scale-[0.97]";
+    "relative inline-flex items-center justify-center overflow-hidden px-7 min-h-14 rounded-2xl font-semibold text-base";
 
   const variantClasses = {
-    primary:
-      "bg-[var(--color-primary)] text-white shadow-[var(--shadow-key)] hover:brightness-[1.06]",
+    primary: "bg-[var(--color-primary)] text-white shadow-[var(--shadow-key)]",
     secondary:
-      "bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] shadow-[var(--shadow-ambient)] hover:bg-[var(--color-field)]",
+      "bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] shadow-[var(--shadow-ambient)]",
   };
 
   return (
-    <a
+    <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
+      whileHover={
+        reduce
+          ? undefined
+          : {
+              y: -2,
+              filter: variant === "primary" ? "brightness(1.06)" : undefined,
+              backgroundColor:
+                variant === "secondary" ? "var(--color-field)" : undefined,
+            }
+      }
+      whileTap={reduce ? undefined : tapPress}
     >
       {showIcon && (
         <svg
@@ -41,6 +55,6 @@ export default function AppStoreButton({
         </svg>
       )}
       <span className="relative z-[1]">Download on the App Store</span>
-    </a>
+    </motion.a>
   );
 }

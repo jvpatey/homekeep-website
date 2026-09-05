@@ -1,6 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import CtaButton from "@/app/components/CtaButton";
 import Footer from "@/app/components/Footer";
+import Reveal from "@/app/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - HomeKeep",
@@ -14,7 +15,7 @@ export default function Privacy() {
       id="main"
       className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]"
     >
-      <header className="max-w-4xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-6">
+      <Reveal as="header" className="max-w-4xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] mb-2">
           Legal
         </p>
@@ -24,10 +25,10 @@ export default function Privacy() {
         <p className="text-sm text-[var(--color-text-secondary)]">
           Last updated: May 16, 2026
         </p>
-      </header>
+      </Reveal>
 
       <main className="max-w-4xl mx-auto px-6 pb-16 md:pb-20">
-        <div className="hearth-card rounded-[22px] p-6 md:p-8 max-w-none">
+        <Reveal as="article" className="hearth-card rounded-[22px] p-6 md:p-8 max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
               Overview
@@ -431,15 +432,10 @@ export default function Privacy() {
               get in touch.
             </p>
             <div className="flex justify-center">
-              <Link
-                href="/support"
-                className="inline-flex items-center min-h-14 px-6 py-3 bg-[var(--color-primary)] text-white rounded-2xl font-semibold text-base md:text-lg hover:brightness-105 active:scale-[0.97] transition-[filter,transform] duration-200"
-              >
-                Contact Support
-              </Link>
+              <CtaButton href="/support">Contact Support</CtaButton>
             </div>
           </section>
-        </div>
+        </Reveal>
       </main>
 
       <Footer current="privacy" />

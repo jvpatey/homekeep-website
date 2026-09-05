@@ -1,5 +1,5 @@
-import Link from "next/link";
 import HouseMark from "./HouseMark";
+import TextLink from "./TextLink";
 
 interface FooterProps {
   current?: "home" | "support" | "privacy" | "terms";
@@ -33,23 +33,15 @@ export default function Footer({ current }: FooterProps) {
           aria-label="Footer"
           className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-[var(--color-text-secondary)]"
         >
-          {links.map((link) => {
-            const isCurrent = current === link.id;
-            return (
-              <Link
-                key={link.id}
-                href={link.href}
-                className={
-                  isCurrent
-                    ? "text-[var(--color-primary)] font-medium"
-                    : "hover:text-[var(--color-primary)] transition-colors"
-                }
-                aria-current={isCurrent ? "page" : undefined}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+          {links.map((link) => (
+            <TextLink
+              key={link.id}
+              href={link.href}
+              current={current === link.id}
+            >
+              {link.label}
+            </TextLink>
+          ))}
         </nav>
         <div className="mt-8 pt-8 border-t border-[var(--color-border)]">
           <p className="text-[var(--color-text-secondary)] text-sm">
