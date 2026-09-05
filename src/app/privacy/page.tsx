@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - HomeKeep",
@@ -10,12 +10,15 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]">
+    <div
+      id="main"
+      className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]"
+    >
       <header className="max-w-4xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] mb-2">
           Legal
         </p>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text)] mb-3">
+        <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text)] mb-3">
           Privacy Policy
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
@@ -24,7 +27,7 @@ export default function Privacy() {
       </header>
 
       <main className="max-w-4xl mx-auto px-6 pb-16 md:pb-20">
-        <div className="glass-card rounded-3xl p-6 md:p-8 border border-[var(--glass-stroke)] max-w-none">
+        <div className="hearth-card rounded-[22px] p-6 md:p-8 max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
               Overview
@@ -430,7 +433,7 @@ export default function Privacy() {
             <div className="flex justify-center">
               <Link
                 href="/support"
-                className="inline-flex items-center px-6 py-3 bg-[var(--color-primary)] text-white rounded-xl font-semibold text-base md:text-lg hover:brightness-105 active:scale-[0.99] transition-all"
+                className="inline-flex items-center min-h-14 px-6 py-3 bg-[var(--color-primary)] text-white rounded-2xl font-semibold text-base md:text-lg hover:brightness-105 active:scale-[0.97] transition-[filter,transform] duration-200"
               >
                 Contact Support
               </Link>
@@ -439,55 +442,7 @@ export default function Privacy() {
         </div>
       </main>
 
-      <footer className="relative z-10 py-12 bg-[var(--color-surface)] border-t border-[var(--color-border)]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="flex justify-center mb-4">
-            <Image
-              src="/homekeep-logo.png"
-              alt="HomeKeep Logo"
-              width={56}
-              height={56}
-              className="rounded-2xl border border-[var(--glass-stroke)]"
-            />
-          </div>
-          <p className="text-xl font-bold text-[var(--color-text)] mb-1">
-            Home
-            <span className="text-[var(--color-accent)]">Keep</span>
-          </p>
-          <p className="text-[var(--color-text-secondary)] mb-8 text-sm">
-            Never forget home maintenance again!
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-[var(--color-text-secondary)]">
-            <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">
-              Home
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-[var(--color-primary)] font-medium"
-              aria-current="page"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-[var(--color-primary)] transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/support"
-              className="hover:text-[var(--color-primary)] transition-colors"
-            >
-              Support
-            </Link>
-          </div>
-          <div className="mt-8 pt-8 border-t border-[var(--color-border)]">
-            <p className="text-[var(--color-text-secondary)] text-sm">
-              © 2026 HomeKeep. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer current="privacy" />
     </div>
   );
 }

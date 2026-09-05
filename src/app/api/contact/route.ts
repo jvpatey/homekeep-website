@@ -32,23 +32,23 @@ export async function POST(request: NextRequest) {
       subject: `HomeKeep Support: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #0d9488;">New Support Request</h2>
+          <h2 style="color: #C45C26;">New Support Request</h2>
           
-          <div style="background-color: #f0fdfa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <div style="background-color: #F4EFE6; padding: 20px; border-radius: 16px; margin: 20px 0;">
             <p><strong>From:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Subject:</strong> ${subject}</p>
           </div>
           
-          <div style="background-color: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
-            <h3 style="margin-top: 0; color: #374151;">Message:</h3>
-            <p style="line-height: 1.6; color: #4b5563;">${message.replace(
+          <div style="background-color: #FFFBF7; padding: 20px; border: 1px solid #E5DDD2; border-radius: 16px;">
+            <h3 style="margin-top: 0; color: #1A1612;">Message:</h3>
+            <p style="line-height: 1.6; color: #6B645C;">${message.replace(
               /\n/g,
               "<br>"
             )}</p>
           </div>
           
-          <div style="margin-top: 20px; padding: 15px; background-color: #f9fafb; border-radius: 8px; font-size: 14px; color: #6b7280;">
+          <div style="margin-top: 20px; padding: 15px; background-color: #F4EFE6; border-radius: 16px; font-size: 14px; color: #6B645C;">
             <p><strong>Reply to:</strong> ${email}</p>
             <p><strong>Sent from:</strong> HomeKeep Support Form</p>
             <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>

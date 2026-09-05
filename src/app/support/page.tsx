@@ -1,11 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ContactForm from "@/app/support/ContactForm";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Support - HomeKeep",
+  title: "Support — HomeKeep",
   description:
     "Get help with HomeKeep. Find answers to frequently asked questions, troubleshooting tips, and contact our support team.",
 };
@@ -18,12 +17,23 @@ function DetailBlock({
   children: ReactNode;
 }) {
   return (
-    <details className="group border-b border-[var(--color-border)] last:border-b-0 open:bg-[var(--glass-tint)]/30 rounded-lg px-1 -mx-1 transition-colors">
-      <summary className="cursor-pointer list-none py-4 pr-2 text-[var(--color-text)] font-medium leading-snug select-none marker:hidden [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3">
+    <details className="group border-b border-[var(--color-border)] last:border-b-0 open:bg-[var(--glass-tint)] rounded-lg px-1 -mx-1 transition-colors">
+      <summary className="cursor-pointer list-none py-4 pr-2 text-[var(--color-text)] font-medium leading-snug select-none marker:hidden [&::-webkit-details-marker]:hidden flex items-center justify-between gap-3 min-h-11">
         <span>{title}</span>
-        <span className="shrink-0 text-[var(--color-text-secondary)] text-lg leading-none group-open:rotate-180 transition-transform duration-200">
-          ▼
-        </span>
+        <svg
+          className="shrink-0 w-4 h-4 text-[var(--color-secondary)] transition-transform duration-200 group-open:rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </summary>
       <div className="pb-4 pl-0.5 text-sm text-[var(--color-text-secondary)] leading-relaxed">
         {children}
@@ -34,12 +44,15 @@ function DetailBlock({
 
 export default function Support() {
   return (
-    <div className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]">
+    <div
+      id="main"
+      className="min-h-screen w-full min-w-0 bg-[var(--color-background)] text-[var(--color-text)]"
+    >
       <header className="max-w-6xl mx-auto px-6 pt-12 pb-8 md:pt-16 md:pb-10">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-secondary)] mb-2">
           Help
         </p>
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text)] mb-3">
+        <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text)] mb-3">
           Support
         </h1>
         <p className="text-base md:text-lg text-[var(--color-text-secondary)] max-w-2xl leading-relaxed">
@@ -49,14 +62,13 @@ export default function Support() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
-        {/* Contact + app info */}
         <section
-          className="glass-card rounded-3xl p-6 md:p-8 mb-10 md:mb-12 border border-[var(--glass-stroke)]"
+          className="hearth-card rounded-[22px] p-6 md:p-8 mb-10 md:mb-12"
           aria-labelledby="contact-heading"
         >
           <h2
             id="contact-heading"
-            className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
+            className="font-display text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
           >
             Contact us
           </h2>
@@ -74,7 +86,7 @@ export default function Support() {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] mb-4">
                 App information
               </h3>
-              <dl className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 divide-y divide-[var(--color-border)] overflow-hidden">
+              <dl className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] divide-y divide-[var(--color-border)] overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 py-3">
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
                     Version
@@ -102,14 +114,13 @@ export default function Support() {
           </div>
         </section>
 
-        {/* FAQ */}
         <section
-          className="glass-card rounded-3xl p-6 md:p-8 mb-10 md:mb-12 border border-[var(--glass-stroke)]"
+          className="hearth-card rounded-[22px] p-6 md:p-8 mb-10 md:mb-12"
           aria-labelledby="faq-heading"
         >
           <h2
             id="faq-heading"
-            className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
+            className="font-display text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
           >
             Common questions
           </h2>
@@ -119,10 +130,10 @@ export default function Support() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-sm font-semibold text-[var(--color-primary)] mb-3">
+              <h3 className="text-sm font-semibold text-[var(--color-secondary)] mb-3">
                 Tasks &amp; schedules
               </h3>
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/40 overflow-hidden px-3 md:px-4">
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
                 <DetailBlock title="How do I create a recurring task?">
                   <p className="pt-3">
                     Tap the &quot;+&quot; button, fill in your task details, then
@@ -148,10 +159,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-[var(--color-primary)] mb-3">
+              <h3 className="text-sm font-semibold text-[var(--color-secondary)] mb-3">
                 Notifications &amp; data
               </h3>
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/40 overflow-hidden px-3 md:px-4">
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
                 <DetailBlock title="How do notifications work?">
                   <p className="pt-3">
                     HomeKeep sends you reminders based on your task schedules
@@ -172,10 +183,10 @@ export default function Support() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-[var(--color-primary)] mb-3">
+              <h3 className="text-sm font-semibold text-[var(--color-secondary)] mb-3">
                 Feedback
               </h3>
-              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/40 overflow-hidden px-3 md:px-4">
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
                 <DetailBlock title="How do I report a bug or request a feature?">
                   <p className="pt-3">
                     Please use the contact form with details about the issue or
@@ -188,14 +199,13 @@ export default function Support() {
           </div>
         </section>
 
-        {/* Troubleshooting */}
         <section
-          className="glass-card rounded-3xl p-6 md:p-8 border border-[var(--glass-stroke)]"
+          className="hearth-card rounded-[22px] p-6 md:p-8"
           aria-labelledby="troubleshoot-heading"
         >
           <h2
             id="troubleshoot-heading"
-            className="text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
+            className="font-display text-xl md:text-2xl font-semibold text-[var(--color-text)] mb-2"
           >
             Fix an issue
           </h2>
@@ -204,9 +214,9 @@ export default function Support() {
             steps below).
           </p>
 
-          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/40 overflow-hidden px-3 md:px-4">
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
             <DetailBlock title="Notifications not working">
-              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-primary)]">
+              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>
                   Check that notifications are enabled in Settings →
                   Notifications
@@ -219,7 +229,7 @@ export default function Support() {
               </ul>
             </DetailBlock>
             <DetailBlock title="App crashes or feels slow">
-              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-primary)]">
+              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>Force close and restart the app</li>
                 <li>Restart your device</li>
                 <li>Check for app updates in the App Store</li>
@@ -230,7 +240,7 @@ export default function Support() {
               </ul>
             </DetailBlock>
             <DetailBlock title="Tasks not appearing">
-              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-primary)]">
+              <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>Pull down on the task list to refresh</li>
                 <li>
                   Check that the task&apos;s due date is within your current view
@@ -247,55 +257,7 @@ export default function Support() {
         </section>
       </main>
 
-      <footer className="relative z-10 py-12 bg-[var(--color-surface)] border-t border-[var(--color-border)]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="flex justify-center mb-4">
-            <Image
-              src="/homekeep-logo.png"
-              alt="HomeKeep Logo"
-              width={56}
-              height={56}
-              className="rounded-2xl border border-[var(--glass-stroke)]"
-            />
-          </div>
-          <p className="text-xl font-bold text-[var(--color-text)] mb-1">
-            Home
-            <span className="text-[var(--color-accent)]">Keep</span>
-          </p>
-          <p className="text-[var(--color-text-secondary)] mb-8 text-sm">
-            Never forget home maintenance again!
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-[var(--color-text-secondary)]">
-            <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">
-              Home
-            </Link>
-            <Link
-              href="/privacy"
-              className="hover:text-[var(--color-primary)] transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-[var(--color-primary)] transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/support"
-              className="text-[var(--color-primary)] font-medium"
-              aria-current="page"
-            >
-              Support
-            </Link>
-          </div>
-          <div className="mt-8 pt-8 border-t border-[var(--color-border)]">
-            <p className="text-[var(--color-text-secondary)] text-sm">
-              © 2026 HomeKeep. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer current="support" />
     </div>
   );
 }

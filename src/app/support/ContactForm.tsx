@@ -15,7 +15,7 @@ interface FormStatus {
 }
 
 const fieldClass =
-  "w-full px-3 py-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] placeholder:text-[var(--color-text-secondary)]/70 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] disabled:opacity-50 disabled:cursor-not-allowed";
+  "w-full px-4 py-3 rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] text-[var(--color-text)] placeholder:text-[var(--color-text-secondary)]/70 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 focus:ring-offset-[var(--color-background)] disabled:opacity-50 disabled:cursor-not-allowed";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -77,12 +77,12 @@ export default function ContactForm() {
     <div>
       {status.type === "success" && (
         <div
-          className="mb-4 p-4 rounded-xl border border-emerald-500/35 bg-emerald-500/10 dark:bg-emerald-500/15 dark:border-emerald-400/30"
+          className="mb-4 p-4 rounded-2xl border border-[var(--color-success)]/35 bg-[var(--color-success)]/10"
           role="status"
         >
           <div className="flex items-start gap-2">
             <svg
-              className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5"
+              className="w-5 h-5 text-[var(--color-success)] shrink-0 mt-0.5"
               fill="currentColor"
               viewBox="0 0 20 20"
               aria-hidden
@@ -93,7 +93,7 @@ export default function ContactForm() {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm font-medium text-emerald-900 dark:text-emerald-100">
+            <p className="text-sm font-medium text-[var(--color-text)]">
               {status.message}
             </p>
           </div>
@@ -102,12 +102,12 @@ export default function ContactForm() {
 
       {status.type === "error" && (
         <div
-          className="mb-4 p-4 rounded-xl border border-red-500/35 bg-red-500/10 dark:bg-red-500/15 dark:border-red-400/30"
+          className="mb-4 p-4 rounded-2xl border border-[var(--color-error)]/35 bg-[var(--color-error)]/10"
           role="alert"
         >
           <div className="flex items-start gap-2">
             <svg
-              className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0 mt-0.5"
+              className="w-5 h-5 text-[var(--color-error)] shrink-0 mt-0.5"
               fill="currentColor"
               viewBox="0 0 20 20"
               aria-hidden
@@ -118,7 +118,7 @@ export default function ContactForm() {
                 clipRule="evenodd"
               />
             </svg>
-            <p className="text-sm font-medium text-red-900 dark:text-red-100">
+            <p className="text-sm font-medium text-[var(--color-text)]">
               {status.message}
             </p>
           </div>
@@ -216,7 +216,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status.type === "loading"}
-          className="w-full bg-[var(--color-primary)] text-white py-3 px-4 rounded-xl font-semibold transition-[filter,transform] duration-200 hover:brightness-105 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md"
+          className="w-full min-h-14 bg-[var(--color-primary)] text-white py-3 px-4 rounded-2xl font-semibold transition-[filter,transform] duration-200 hover:brightness-105 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-[var(--shadow-key)]"
         >
           {status.type === "loading" ? (
             <>

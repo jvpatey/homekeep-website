@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 interface AppStoreButtonProps {
   href: string;
   className?: string;
@@ -15,16 +13,14 @@ export default function AppStoreButton({
   variant = "primary",
   showIcon = true,
 }: AppStoreButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   const baseClasses =
-    "relative inline-flex items-center justify-center overflow-hidden px-6 py-3 rounded-xl font-semibold text-lg transition-[filter,transform,box-shadow] duration-200 ease-out active:scale-[0.98]";
+    "relative inline-flex items-center justify-center overflow-hidden px-7 min-h-14 rounded-2xl font-semibold text-base transition-[filter,transform,box-shadow] duration-200 ease-out active:scale-[0.97]";
 
   const variantClasses = {
     primary:
-      "bg-[var(--color-primary)] text-white shadow-md hover:brightness-[1.06]",
+      "bg-[var(--color-primary)] text-white shadow-[var(--shadow-key)] hover:brightness-[1.06]",
     secondary:
-      "bg-white text-slate-800 hover:bg-gray-50 border-2 border-white/90 shadow-md dark:text-slate-900",
+      "bg-[var(--color-surface)] text-[var(--color-text)] border border-[var(--color-border)] shadow-[var(--shadow-ambient)] hover:bg-[var(--color-field)]",
   };
 
   return (
@@ -33,20 +29,10 @@ export default function AppStoreButton({
       target="_blank"
       rel="noopener noreferrer"
       className={`${baseClasses} ${variantClasses[variant]} ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
-      {variant === "primary" ? (
-        <span
-          className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-b from-white/[0.18] to-transparent"
-          aria-hidden
-        />
-      ) : null}
       {showIcon && (
         <svg
-          className={`relative z-[1] w-6 h-6 mr-2 transition-transform duration-200 ease-out ${
-            isHovered ? "scale-105" : ""
-          }`}
+          className="relative z-[1] w-6 h-6 mr-2"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden

@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fraunces",
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://homekeep.app"),
-  title: "HomeKeep - Never forget home maintenance again!",
+  title: "HomeKeep — Home maintenance, handled.",
   description:
-    "Track, schedule, and complete all your home maintenance tasks with reminders and organized task tracking. Never miss important home maintenance again!",
+    "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
   keywords:
     "home maintenance, home improvement, task tracking, reminders, home care, maintenance schedule",
   authors: [{ name: "HomeKeep" }],
@@ -34,24 +31,24 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "HomeKeep - Never forget home maintenance again!",
+    title: "HomeKeep — Home maintenance, handled.",
     description:
-      "Track, schedule, and complete all your home maintenance tasks with reminders and organized task tracking.",
+      "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
     type: "website",
     images: [
       {
         url: "/homekeep-logo.png",
-        width: 1200,
-        height: 630,
-        alt: "HomeKeep Logo",
+        width: 1024,
+        height: 1024,
+        alt: "HomeKeep",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "HomeKeep - Never forget home maintenance again!",
+    card: "summary",
+    title: "HomeKeep — Home maintenance, handled.",
     description:
-      "Track, schedule, and complete all your home maintenance tasks with reminders and organized task tracking.",
+      "Reminders, history, and a plan — without the mental load. Track tasks, stay on schedule, and keep this house.",
     images: ["/homekeep-logo.png"],
   },
 };
@@ -62,10 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={fraunces.variable}>
+      <body className="antialiased">
+        <a href="#main" className="skip-to-content">
+          Skip to content
+        </a>
         <Navbar />
         {children}
         <Analytics />
