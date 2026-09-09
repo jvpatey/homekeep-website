@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import CtaButton from "@/app/components/CtaButton";
 import Footer from "@/app/components/Footer";
 import Reveal from "@/app/components/Reveal";
-import { APP_CONFIG } from "@/app/config/app";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -30,7 +29,7 @@ export default function Privacy() {
           HomeKeep Privacy Policy
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: 5 September 2026
+          Last updated: 9 September 2026
         </p>
       </Reveal>
 
@@ -152,15 +151,7 @@ export default function Privacy() {
               Contact
             </h2>
             <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
-              For privacy questions, use the HomeKeep contact email on the App
-              Store product page, or email{" "}
-              <a
-                href={`mailto:${APP_CONFIG.contact.email}`}
-                className="text-[var(--color-primary)] underline underline-offset-2 hover:opacity-80 transition-opacity"
-              >
-                {APP_CONFIG.contact.email}
-              </a>
-              .
+              For privacy questions, visit our support page to get in touch.
             </p>
             <div className="flex justify-center">
               <CtaButton href="/support">Contact Support</CtaButton>

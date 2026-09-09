@@ -30,7 +30,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: September 5, 2026
+          Last updated: September 9, 2026
         </p>
       </Reveal>
 
@@ -118,8 +118,8 @@ export default function Terms() {
             <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
               Subject to these Terms, we grant you a limited, non-exclusive,
               non-transferable, revocable license to use the App for personal,
-              non-commercial purposes on supported Apple mobile devices running
-              iOS (for example iPhone).
+              non-commercial purposes on supported Apple devices running iOS
+              (iPhone and iPad).
             </p>
 
             <h3 className="text-lg font-medium text-[var(--color-text)] mb-3">
