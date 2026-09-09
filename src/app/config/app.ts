@@ -16,7 +16,6 @@ export const APP_CONFIG = {
 
   // Contact information
   contact: {
-    email: "support@homekeep.app",
     website: "https://homekeep.app",
   },
 } as const;

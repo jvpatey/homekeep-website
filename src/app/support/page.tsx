@@ -68,14 +68,14 @@ export default function Support() {
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
                     Version
                   </dt>
-                  <dd className="text-sm text-[var(--color-text)]">1.3.1</dd>
+                  <dd className="text-sm text-[var(--color-text)]">2.0.1</dd>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 py-3">
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
                     Platform
                   </dt>
                   <dd className="text-sm text-[var(--color-text)]">
-                    iPhone (iOS), available on the App Store.
+                    iPhone and iPad (iOS), available on the App Store.
                   </dd>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 py-3">
@@ -83,7 +83,7 @@ export default function Support() {
                     Compatibility
                   </dt>
                   <dd className="text-sm text-[var(--color-text)]">
-                    iOS 14.0 or later.
+                    iOS 16.4 or later.
                   </dd>
                 </div>
               </dl>
@@ -118,22 +118,50 @@ export default function Support() {
                 <FaqItem title="How do I create a recurring task?">
                   <p className="pt-3">
                     Tap the &quot;+&quot; button, fill in your task details, then
-                    select your desired interval from daily to yearly. HomeKeep
-                    will automatically create reminders based on your schedule.
+                    choose an interval: Weekly, Monthly, Quarterly, Yearly, or
+                    Custom (in days). HomeKeep schedules reminders from that
+                    cadence.
                   </p>
                 </FaqItem>
-                <FaqItem title="How do I delete a task?">
+                <FaqItem title="How do I delete a task or reset my schedule?">
                   <p className="pt-3">
-                    To delete individual tasks: Go to Profile Menu → Total
-                    Tasks, then tap the garbage icon next to any task. To delete
-                    all tasks: Go to Profile Menu → Settings → Delete All Tasks.
+                    To delete one reminder series: open Profile → All reminders,
+                    then tap the trash icon next to the task. To clear every
+                    task for this home: open Profile → Settings → Reset this
+                    home&apos;s schedule.
                   </p>
                 </FaqItem>
                 <FaqItem title="What categories are available?">
                   <p className="pt-3">
-                    HomeKeep includes 9 comprehensive categories: HVAC,
-                    Plumbing, Electrical, Appliances, Exterior, Interior,
-                    Landscaping, Safety, and General maintenance tasks.
+                    HomeKeep includes 9 categories: HVAC, Plumbing, Electrical,
+                    Appliances, Exterior, Interior, Landscaping, Safety, and
+                    General.
+                  </p>
+                </FaqItem>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-secondary)] mb-3">
+                HomeKeep + &amp; sharing
+              </h3>
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
+                <FaqItem title="What is HomeKeep +?">
+                  <p className="pt-3">
+                    HomeKeep + is the subscription that unlocks completing
+                    tasks, scheduled reminders, household sharing, home summary
+                    export, and most edits after a 7-day free trial. Without an
+                    active plan, some information may remain view-only. Manage
+                    or cancel anytime in your App Store account settings;
+                    restore purchases is available in the app.
+                  </p>
+                </FaqItem>
+                <FaqItem title="How does household sharing work?">
+                  <p className="pt-3">
+                    Invite someone with a short invite code so they can see the
+                    same home schedule and related records. The household owner
+                    controls the address, systems, and emergency facts. Only
+                    share codes with people you trust.
                   </p>
                 </FaqItem>
               </div>
@@ -146,18 +174,18 @@ export default function Support() {
               <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
                 <FaqItem title="How do notifications work?">
                   <p className="pt-3">
-                    HomeKeep sends you reminders based on your task schedules
-                    and due dates. You can enable or disable notifications for
-                    different categories in Settings → Notification Preferences
-                    to control which types of tasks send you alerts.
+                    HomeKeep sends reminders based on your task schedules and
+                    due dates. Open Profile → Settings → Notification settings
+                    to use the master switch and per-category options for
+                    Upcoming reminders, Overdue and due today, and Weekly
+                    summary.
                   </p>
                 </FaqItem>
                 <FaqItem title="Is my data backed up?">
                   <p className="pt-3">
-                    Yes. Your tasks and settings are securely stored in the
-                    cloud using Supabase, so your data is automatically backed
-                    up and synced across your devices. You won&apos;t lose your
-                    data when you upgrade or restore your device.
+                    Yes. Your account and home data sync to the cloud (via
+                    Supabase), so they stay available across your signed-in
+                    devices and after you upgrade or restore a device.
                   </p>
                 </FaqItem>
               </div>
@@ -203,13 +231,13 @@ export default function Support() {
             <FaqItem title="Notifications not working">
               <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
                 <li>
-                  Check that notifications are enabled in Settings →
-                  Notifications
+                  Check that notifications are enabled in Profile → Settings →
+                  Notification settings
                 </li>
                 <li>
                   Verify HomeKeep has notification permissions in iOS Settings
                 </li>
-                <li>Ensure Do Not Disturb is not blocking notifications</li>
+                <li>Ensure Focus / Do Not Disturb is not blocking notifications</li>
                 <li>Try restarting the app</li>
               </ul>
             </FaqItem>
@@ -226,7 +254,7 @@ export default function Support() {
             </FaqItem>
             <FaqItem title="Tasks not appearing">
               <ul className="pt-3 list-disc pl-5 space-y-2 marker:text-[var(--color-secondary)]">
-                <li>Pull down on the task list to refresh</li>
+                <li>Pull down on the schedule to refresh</li>
                 <li>
                   Check that the task&apos;s due date is within your current view
                 </li>
@@ -234,7 +262,7 @@ export default function Support() {
                   Verify the task wasn&apos;t accidentally marked as complete
                 </li>
                 <li>
-                  Try switching between different views (Upcoming, All Tasks)
+                  Open Profile → All reminders to confirm the series still exists
                 </li>
               </ul>
             </FaqItem>
