@@ -29,7 +29,7 @@ export default function Privacy() {
           HomeKeep Privacy Policy
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: 9 September 2026
+          Last updated: 18 October 2026
         </p>
       </Reveal>
 
@@ -55,15 +55,87 @@ export default function Privacy() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Biometric sign-in
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Face ID or Touch ID is optional. If you turn it on, a refresh
+              token is stored in the device Secure Store so you can unlock the
+              app after a local sign-out. We do not receive your biometric
+              data—Apple processes Face ID and Touch ID on the device.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
               Home and schedule
             </h2>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               We store the home details you enter (address, climate-related
-              location, equipment, manuals, emergency facts, tasks, and
-              completion notes or photos). Address text may be sent to Mapbox to
-              suggest places. Coordinates derived from your address are used to
-              show weather-related reminders (Open-Meteo). We do not collect GPS
-              from the device for this.
+              location, equipment, emergency facts, tasks, completion notes or
+              photos, and related home-record fields). Address text may be sent
+              to Mapbox to suggest places. Coordinates derived from your address
+              are used to show weather-related reminders (Open-Meteo). We do not
+              collect GPS from the device for this.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Documents
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Manuals, receipts, warranties, inspection reports, permits, and
+              other files you upload are stored with the home so they appear in
+              the app for you and household members you invite.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Keeper and AI features
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              When you use Keeper, label scan, or inspection import, relevant
+              home data and/or images you submit are sent through our backend to
+              Google Gemini to generate an answer or extract fields. That data
+              is used only to fulfill the request. Use may be limited by free
+              quotas or require HomeKeep +.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Recalls
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Equipment identifiers you save (for example brand, model, or
+              serial) may be checked against recall sources for your country,
+              such as Health Canada or United States recall data, so we can show
+              alerts in the app.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Calendar feeds
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              If you subscribe to a maintenance calendar feed, a private token
+              lets your calendar app fetch due dates and task titles. Anyone
+              with that link could read those details—treat it like a password
+              and revoke or regenerate it in Settings if it is shared by
+              mistake.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold text-[var(--color-text)] mb-4">
+              Widgets
+            </h2>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              The Home Screen widget reads a schedule snapshot written to an App
+              Group on your device. That snapshot is not sent elsewhere for the
+              widget.
             </p>
           </section>
 
@@ -73,8 +145,8 @@ export default function Privacy() {
             </h2>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               If you create or join a household, members can see that home’s
-              schedule and related records. Invite codes are meant to be shared
-              only with people you trust.
+              schedule and related records. Invite codes and QR invites are
+              meant to be shared only with people you trust.
             </p>
           </section>
 
@@ -107,8 +179,10 @@ export default function Privacy() {
               Photos and camera
             </h2>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
-              Photos you choose for a profile, equipment, emergency facts, or a
-              completed task are stored so they appear in the app. We do not use
+              Photos you choose for a profile, equipment, emergency facts, a
+              completed task, or AI features (for example a nameplate or
+              document scan) are stored or processed as described in this policy
+              so they appear in the app or fulfill the request. We do not use
               your photo library for advertising.
             </p>
           </section>
@@ -119,7 +193,8 @@ export default function Privacy() {
             </h2>
             <p className="text-[var(--color-text-secondary)] leading-relaxed">
               We use Supabase to host accounts and data, Mapbox for address
-              search, Open-Meteo for weather, RevenueCat and Apple or Google for
+              search, Open-Meteo for weather, Google (Gemini) for Keeper and
+              related AI features, RevenueCat and Apple or Google for
               subscriptions, and Expo/Apple for push delivery. They process data
               only to provide those services.
             </p>

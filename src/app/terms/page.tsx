@@ -30,7 +30,7 @@ export default function Terms() {
           Terms of Service
         </h1>
         <p className="text-sm text-[var(--color-text-secondary)]">
-          Last updated: September 9, 2026
+          Last updated: 18 October 2026
         </p>
       </Reveal>
 
@@ -77,15 +77,31 @@ export default function Terms() {
                 • Optional home address and a weather summary on the dashboard
               </li>
               <li>
+                • A home record: equipment details, shutoffs, trusted pros, and
+                documents (manuals, receipts, warranties, inspections, permits)
+              </li>
+              <li>
                 • Optional emergency facts for this home (for example shutoff
                 locations, with notes or photos)
               </li>
               <li>
-                • Optional equipment library (manuals and purchase receipts as
-                PDF or photo, with in-app viewing)
+                • Keeper and related AI features (assistant answers, equipment
+                label scan, and inspection import)
+              </li>
+              <li>• Equipment recall alerts based on saved equipment and country</li>
+              <li>
+                • Home Screen widgets showing overdue and upcoming tasks
               </li>
               <li>
-                • A shared household: invite others to one home and one plan
+                • Optional calendar subscription feeds for due dates in Apple
+                Calendar or other calendar apps
+              </li>
+              <li>
+                • Optional Face ID or Touch ID unlock after you sign in
+              </li>
+              <li>
+                • HomeShare: invite others to one home and one plan with a code
+                or QR
               </li>
               <li>
                 • A printable home maintenance summary (PDF assembled on your
@@ -267,10 +283,20 @@ export default function Terms() {
             <h3 className="text-lg font-medium text-[var(--color-text)] mb-3">
               No Professional Advice
             </h3>
-            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+            <p className="text-[var(--color-text-secondary)] leading-relaxed mb-4">
               HomeKeep does not provide professional maintenance, repair, or
               safety advice. Always consult qualified professionals for complex
               maintenance tasks, safety concerns, or when in doubt.
+            </p>
+
+            <h3 className="text-lg font-medium text-[var(--color-text)] mb-3">
+              AI and recall alerts
+            </h3>
+            <p className="text-[var(--color-text-secondary)] leading-relaxed">
+              Keeper answers, label scans, inspection imports, and recall alerts
+              are informational only. They may be incomplete or incorrect. Verify
+              important details with manufacturers, official recall sources, and
+              qualified professionals before you act.
             </p>
           </section>
 
