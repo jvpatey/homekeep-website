@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import AppDownloadSection from "./components/AppDownloadSection";
 import Footer from "./components/Footer";
@@ -11,11 +12,12 @@ import TextLink from "./components/TextLink";
 import { APP_CONFIG } from "./config/app";
 import { fadeUp, staggerChildren } from "./lib/motion";
 
-const FEATURES = [
+/** Three steps: how HomeKeep works — plan, stay ahead, know the house. */
+const STORY = [
   {
-    text: "Organize",
+    text: "Plan this house",
     number: "01",
-    line: "Every task, in one place.",
+    line: "Setup builds a maintenance schedule from your systems and equipment—not a blank checklist.",
     stage: "feature-stage-sage",
     icon: (
       <path
@@ -27,9 +29,9 @@ const FEATURES = [
     ),
   },
   {
-    text: "Schedule",
+    text: "Stay ahead",
     number: "02",
-    line: "Reminders that keep the cycle moving.",
+    line: "Reminders when work is due—on your phone, Home Screen widget, and Apple Calendar.",
     stage: "feature-stage-copper",
     icon: (
       <path
@@ -41,26 +43,72 @@ const FEATURES = [
     ),
   },
   {
-    text: "Track",
+    text: "Know the house",
     number: "03",
-    line: "A history you can hand someone.",
+    line: "Equipment, documents, and history live with the schedule. Ask Keeper, or share the plan with HomeShare.",
     stage: "feature-stage-ink",
     icon: (
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
       />
     ),
   },
 ] as const;
 
 const PLUS_VALUES = [
-  "Personalized reminders for this home",
-  "Equipment manuals and a shared household",
-  "The next cycle of the schedule, automatically",
+  "Full history, spend tracking, and a home history PDF",
+  "Documents, trusted pros, and HomeShare for the household",
+  "Keeper, label scan, and inspection import",
 ];
+
+function FeatureTile({
+  text,
+  number,
+  line,
+  stage,
+  icon,
+}: {
+  text: string;
+  number: string;
+  line: string;
+  stage: string;
+  icon: ReactNode;
+}) {
+  return (
+    <HoverLift className="group h-full">
+      <article className="flex flex-col h-full">
+        <div className={`feature-stage ${stage} mb-5`}>
+          <div className="feature-stage-bars" aria-hidden>
+            <span />
+            <span />
+            <span />
+          </div>
+          <span className="absolute top-4 left-4 text-xs font-semibold tracking-[0.16em] opacity-70">
+            {number}
+          </span>
+          <svg
+            className="relative w-14 h-14 transition-transform duration-200 group-hover:scale-105"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden
+          >
+            {icon}
+          </svg>
+        </div>
+        <h3 className="font-display text-2xl font-semibold text-[var(--color-text)] mb-2 tracking-tight">
+          {text}
+        </h3>
+        <p className="text-[15px] text-[var(--color-text-secondary)] leading-relaxed">
+          {line}
+        </p>
+      </article>
+    </HoverLift>
+  );
+}
 
 export default function Home() {
   const reduce = useReducedMotion();
@@ -101,13 +149,14 @@ export default function Home() {
                   className="text-base sm:text-lg text-[var(--color-text-secondary)] mb-4 max-w-md lg:max-w-lg leading-relaxed"
                   variants={fadeUp}
                 >
-                  Reminders, history, and a plan — without the mental load.
+                  A schedule, a home record, and a shared household — without
+                  the mental load.
                 </motion.p>
                 <motion.p
                   className="text-sm font-medium text-[var(--color-text-secondary)] mb-8 tracking-wide"
                   variants={fadeUp}
                 >
-                  Organize · Schedule · Track
+                  Plan · Stay ahead · Know the house
                 </motion.p>
 
                 <motion.div
@@ -136,11 +185,11 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-6">
             <Reveal className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-3 tracking-tight">
-                A plan for the whole house
+                How HomeKeep works
               </h2>
               <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
-                Organize what matters, see what&apos;s due, and stay ahead
-                without the spreadsheet.
+                One home, one plan—built once, remembered for you, and kept with
+                everything that belongs to the house.
               </p>
             </Reveal>
 
@@ -148,37 +197,9 @@ export default function Home() {
               stagger
               className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6"
             >
-              {FEATURES.map((feature) => (
-                <RevealItem key={feature.text}>
-                  <HoverLift className="group h-full">
-                    <article className="flex flex-col h-full">
-                      <div className={`feature-stage ${feature.stage} mb-5`}>
-                        <div className="feature-stage-bars" aria-hidden>
-                          <span />
-                          <span />
-                          <span />
-                        </div>
-                        <span className="absolute top-4 left-4 text-xs font-semibold tracking-[0.16em] opacity-70">
-                          {feature.number}
-                        </span>
-                        <svg
-                          className="relative w-14 h-14 transition-transform duration-200 group-hover:scale-105"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          aria-hidden
-                        >
-                          {feature.icon}
-                        </svg>
-                      </div>
-                      <h3 className="font-display text-2xl font-semibold text-[var(--color-text)] mb-2 tracking-tight">
-                        {feature.text}
-                      </h3>
-                      <p className="text-[15px] text-[var(--color-text-secondary)] leading-relaxed">
-                        {feature.line}
-                      </p>
-                    </article>
-                  </HoverLift>
+              {STORY.map((step) => (
+                <RevealItem key={step.text}>
+                  <FeatureTile {...step} />
                 </RevealItem>
               ))}
             </Reveal>

@@ -68,7 +68,7 @@ export default function Support() {
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
                     Version
                   </dt>
-                  <dd className="text-sm text-[var(--color-text)]">2.0.1</dd>
+                  <dd className="text-sm text-[var(--color-text)]">2.1.0</dd>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-4 py-3">
                   <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-text-secondary)] shrink-0 sm:w-32">
@@ -148,9 +148,10 @@ export default function Support() {
               <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
                 <FaqItem title="What is HomeKeep +?">
                   <p className="pt-3">
-                    HomeKeep + is the subscription that unlocks completing
-                    tasks, scheduled reminders, household sharing, home summary
-                    export, and most edits after a 7-day free trial. Without an
+                    HomeKeep + unlocks completing tasks, scheduled reminders,
+                    HomeShare, the full home record (history, spend, documents,
+                    pros, PDF export), and Keeper (including label scan and
+                    inspection import) after a 7-day free trial. Without an
                     active plan, some information may remain view-only. Manage
                     or cancel anytime in your App Store account settings;
                     restore purchases is available in the app.
@@ -158,10 +159,59 @@ export default function Support() {
                 </FaqItem>
                 <FaqItem title="How does household sharing work?">
                   <p className="pt-3">
-                    Invite someone with a short invite code so they can see the
-                    same home schedule and related records. The household owner
-                    controls the address, systems, and emergency facts. Only
-                    share codes with people you trust.
+                    Invite someone with a short invite code or QR so they can
+                    see the same home schedule and related records. The
+                    household owner controls the address, systems, and
+                    emergency facts. Only share codes with people you trust.
+                  </p>
+                </FaqItem>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-secondary)] mb-3">
+                Home record &amp; signing in
+              </h3>
+              <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-field)] overflow-hidden px-3 md:px-4">
+                <FaqItem title="How does Face ID work?">
+                  <p className="pt-3">
+                    Face ID (or Touch ID) is optional quick sign-in. Turn it on
+                    in Settings after you sign in with Apple, Google, or email.
+                    A refresh token stays on your device in Secure Store so you
+                    can unlock the app; we never receive your biometric data.
+                  </p>
+                </FaqItem>
+                <FaqItem title="How do I add the Home Screen widget?">
+                  <p className="pt-3">
+                    On your iPhone Home Screen, touch and hold an empty area,
+                    tap Edit → Add Widget, then choose HomeKeep. The widget
+                    shows overdue and upcoming tasks from your schedule.
+                  </p>
+                </FaqItem>
+                <FaqItem title="Can I see tasks in Apple Calendar?">
+                  <p className="pt-3">
+                    Yes. Open Profile → Settings and subscribe to your
+                    maintenance calendar feed. Due dates then appear in Apple
+                    Calendar. Treat the feed link like a password—anyone with
+                    it can see those titles and dates.
+                  </p>
+                </FaqItem>
+                <FaqItem title="What is Keeper?">
+                  <p className="pt-3">
+                    Keeper is HomeKeep&apos;s in-app assistant for this home.
+                    It can answer questions using your schedule, equipment, and
+                    records, scan equipment labels, and help turn an inspection
+                    report into tasks. HomeKeep + includes Keeper; limited free
+                    uses may be available without a subscription.
+                  </p>
+                </FaqItem>
+                <FaqItem title="How do documents and recalls work?">
+                  <p className="pt-3">
+                    In your home record you can store manuals, warranties,
+                    receipts, inspection reports, and permits. HomeKeep can
+                    check equipment you&apos;ve saved against recall sources for
+                    your country (United States or Canada) and alert you when
+                    something matches.
                   </p>
                 </FaqItem>
               </div>
